@@ -1,0 +1,47 @@
+[
+  {
+    "id": "a1",
+    "title": "How to verify a Japanese supplier before your first order",
+    "slug": "verify-japanese-supplier",
+    "excerpt": "Corporate numbers, gBizINFO records, and the checks that separate a registered company from a reseller. A practical walkthrough.",
+    "coverImage": "/assets/articles/articleSupplier.png",
+    "publishedAt": "2026-07-01",
+    "category": "Guides"
+  },
+  {
+    "id": "a2",
+    "title": "Reading a Japanese address: from prefecture to block number",
+    "slug": "reading-japanese-addresses",
+    "excerpt": "Japanese addresses run large-to-small — prefecture, city, ward, district, block. Once you see the pattern, every listing makes sense.",
+    "coverImage": "/assets/articles/articleAddress.png",
+    "publishedAt": "2026-06-24",
+    "category": "Guides"
+  },
+  {
+    "id": "a3",
+    "title": "What 定休日 means for your visit: opening hours in Japan",
+    "slug": "opening-hours-in-japan",
+    "excerpt": "Regular closing days, last order times, and holiday schedules — how to read the hours a Japanese business actually keeps.",
+    "coverImage": "/assets/articles/articleHours.png",
+    "publishedAt": "2026-06-17",
+    "category": "Guides"
+  },
+  {
+    "id": "a4",
+    "title": "Tokyo's shotengai: where neighborhood business still thrives",
+    "slug": "tokyo-shotengai",
+    "excerpt": "The covered shopping streets that anchor Tokyo's neighborhoods, and why small directories matter more there than anywhere.",
+    "coverImage": "/assets/articles/articleShotengai.png",
+    "publishedAt": "2026-06-10",
+    "category": "Culture"
+  },
+  {
+    "id": "a5",
+    "title": "The 2026 corporate registry update and what it changes for lookups",
+    "slug": "corporate-registry-update-2026",
+    "excerpt": "METI's gBizINFO moved to API v2 this year. What changed, what stayed, and what it means for supplier searches.",
+    "coverImage": "/assets/articles/articleRegistry.png",
+    "publishedAt": "2026-06-03",
+    "category": "News"
+  }
+]
