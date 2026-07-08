@@ -40,6 +40,12 @@ export function getValidImageUrl(imageUrl: string): string {
   return "/assets/hero.png";
 }
 
+/** Parses a frontmatter date (YAML Date object or string) to ISO, falling back to now if invalid. */
+function toIsoDate(value: unknown): string {
+  const date = value instanceof Date ? value : new Date(String(value ?? ""));
+  return isNaN(date.getTime()) ? new Date().toISOString() : date.toISOString();
+}
+
 export function getAllArticles(): Article[] {
   // Only process markdown files
   let fileNames: string[] = [];
@@ -50,22 +56,23 @@ export function getAllArticles(): Article[] {
     return [];
   }
 
-  const articles: Article[] = fileNames.map((fileName) => {
+  const articles: Article[] = fileNames.flatMap((fileName) => {
     const fullPath = path.join(articlesDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const { data } = matter(fileContents);
 
-    return {
-      id: data.slug || fileName.replace(/\.md$/, ""),
-      title: data.title || "",
-      slug: data.slug || "",
+    // Skip markdown files that aren't articles (e.g. prompts/docs without frontmatter)
+    if (!data.slug || !data.title) return [];
+
+    return [{
+      id: data.slug,
+      title: data.title,
+      slug: data.slug,
       excerpt: data.excerpt || "",
       banner: getValidImageUrl(data.banner),
-      publishedAt: data.publishedAt 
-        ? (data.publishedAt instanceof Date ? data.publishedAt.toISOString() : new Date(data.publishedAt).toISOString())
-        : new Date().toISOString(),
+      publishedAt: toIsoDate(data.publishedAt),
       category: data.category || "",
-    } as Article;
+    } as Article];
   });
 
   // Sort articles by date descending
@@ -86,9 +93,7 @@ export function getArticleBySlug(slug: string): { article: Article; content: str
       slug: data.slug || "",
       excerpt: data.excerpt || "",
       banner: getValidImageUrl(data.banner),
-      publishedAt: data.publishedAt 
-        ? (data.publishedAt instanceof Date ? data.publishedAt.toISOString() : new Date(data.publishedAt).toISOString())
-        : new Date().toISOString(),
+      publishedAt: toIsoDate(data.publishedAt),
       category: data.category || "",
     };
 
