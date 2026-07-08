@@ -120,10 +120,22 @@ export async function getArticleBySlug(slug: string): Promise<Article | undefine
 export const getFeaturedPool = unstable_cache(
   async (): Promise<Business[]> => {
     const dateStr = new Date().toISOString().slice(0, 13); // e.g., '2026-07-08T11'
-    
-    const results = await Promise.allSettled(
-      CATEGORIES.map((cat) => searchBusinesses({ category: cat.slug, limit: 5 }))
-    );
+
+    // Geoapify's free plan allows 5 req/s — a burst of all categories at once
+    // gets rate-limited (429), so fetch in small batches with a pause between.
+    const results: PromiseSettledResult<Awaited<ReturnType<typeof searchBusinesses>>>[] = [];
+    const BATCH_SIZE = 4;
+    for (let i = 0; i < CATEGORIES.length; i += BATCH_SIZE) {
+      const batch = CATEGORIES.slice(i, i + BATCH_SIZE);
+      results.push(
+        ...(await Promise.allSettled(
+          batch.map((cat) => searchBusinesses({ category: cat.slug, limit: 5 }))
+        ))
+      );
+      if (i + BATCH_SIZE < CATEGORIES.length) {
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+      }
+    }
 
     const pool: Business[] = [];
 
@@ -146,6 +158,13 @@ export const getFeaturedPool = unstable_cache(
         }
       }
     });
+
+    // Throw rather than cache a failed run: unstable_cache stores successful
+    // results only, so the next request retries instead of pinning an empty
+    // section for the whole revalidate window.
+    if (pool.length < 3) {
+      throw new Error(`Featured pool unavailable: only ${pool.length} categories resolved`);
+    }
 
     return pool;
   },

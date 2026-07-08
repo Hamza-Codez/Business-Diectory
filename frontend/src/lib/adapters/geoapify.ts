@@ -152,7 +152,12 @@ export async function resolveLocation(location?: string): Promise<Coords | undef
 
 async function fetchPlaces(query: URLSearchParams): Promise<ApiResult> {
   try {
-    const res = await geoapifyFetch(`${PLACES_URL}?${query}`);
+    let res = await geoapifyFetch(`${PLACES_URL}?${query}`);
+    if (res.status === 429) {
+      // Rate limited (free plan: 5 req/s) — back off and retry once
+      await new Promise((resolve) => setTimeout(resolve, 1200));
+      res = await geoapifyFetch(`${PLACES_URL}?${query}`);
+    }
     if (!res.ok) {
       console.warn(`Geoapify Places request failed: ${res.status}`);
       const body = await res.text();

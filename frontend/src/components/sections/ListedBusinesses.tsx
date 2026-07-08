@@ -5,7 +5,15 @@ import { getFeaturedPool } from "@/lib/api";
 import FeaturedListingsGrid from "./FeaturedListingsGrid";
 
 export default async function ListedBusinesses() {
-  const pool = await getFeaturedPool();
+  let pool: Awaited<ReturnType<typeof getFeaturedPool>>;
+  try {
+    pool = await getFeaturedPool();
+  } catch (e) {
+    // Pool couldn't be assembled this request (e.g. upstream rate limit) —
+    // hide the section now; the next request retries since failures aren't cached.
+    console.warn("ListedBusinesses: featured pool unavailable", e);
+    return null;
+  }
 
   if (!pool || pool.length < 3) {
     return null;
