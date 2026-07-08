@@ -20,7 +20,7 @@ export function Wordmark() {
         alt="Cherry Logo"
         width={24}
         height={24}
-        className="shrink-0 animate-[spin_2s_linear_infinite]"
+        className="shrink-0 animate-[spin_8s_linear_infinite]"
       />
       <span className="leading-tight">Japan Business Directory</span>
     </Link>
