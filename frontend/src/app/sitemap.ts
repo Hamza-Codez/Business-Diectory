@@ -22,12 +22,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Dynamic article routes
   const articles = getAllArticles();
-  const articleRoutes: MetadataRoute.Sitemap = articles.map((article) => ({
-    url: `${baseUrl}/articles/${article.slug}`,
-    lastModified: new Date(article.publishedAt),
-    changeFrequency: 'monthly',
-    priority: 0.6,
-  }));
+  const articleRoutes: MetadataRoute.Sitemap = articles.map((article) => {
+    const date = new Date(article.publishedAt);
+    const safeDate = isNaN(date.getTime()) ? new Date() : date;
+    
+    return {
+      url: `${baseUrl}/articles/${article.slug}`,
+      lastModified: safeDate,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    };
+  });
 
   return [...routes, ...articleRoutes];
 }
