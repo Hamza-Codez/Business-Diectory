@@ -61,7 +61,9 @@ export function getAllArticles(): Article[] {
       slug: data.slug || "",
       excerpt: data.excerpt || "",
       banner: getValidImageUrl(data.banner),
-      publishedAt: data.publishedAt || "",
+      publishedAt: data.publishedAt 
+        ? (data.publishedAt instanceof Date ? data.publishedAt.toISOString() : new Date(data.publishedAt).toISOString())
+        : new Date().toISOString(),
       category: data.category || "",
     } as Article;
   });
@@ -84,7 +86,9 @@ export function getArticleBySlug(slug: string): { article: Article; content: str
       slug: data.slug || "",
       excerpt: data.excerpt || "",
       banner: getValidImageUrl(data.banner),
-      publishedAt: data.publishedAt || "",
+      publishedAt: data.publishedAt 
+        ? (data.publishedAt instanceof Date ? data.publishedAt.toISOString() : new Date(data.publishedAt).toISOString())
+        : new Date().toISOString(),
       category: data.category || "",
     };
 
