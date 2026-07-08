@@ -139,17 +139,17 @@ export default function SearchBandForm({
       </form>
 
       {showPopular && (
-        <div className="mt-6 flex items-center gap-3">
+        <div className="mt-6 flex flex-col items-start sm:flex-row sm:items-center gap-3 sm:gap-4">
           <span
             className={
-              tone === "dark" ? "text-base text-white shrink-0" : "text-base text-ink shrink-0"
+              tone === "dark" ? "text-sm sm:text-base text-white shrink-0" : "text-sm sm:text-base text-ink shrink-0"
             }
           >
             {m.popular}
           </span>
           <div
             className={cn(
-              "flex flex-wrap items-center gap-3 transition-opacity duration-300 min-h-[32px]",
+              "grid grid-cols-3 gap-2 sm:gap-3 transition-opacity duration-300 min-h-[32px] w-full lg:w-auto",
               isFading ? "opacity-0" : "opacity-100"
             )}
           >
@@ -157,11 +157,12 @@ export default function SearchBandForm({
               <Chip
                 key={item.label}
                 onClick={() => runSearch("", "", item.category)}
-                className={
+                className={cn(
+                  "w-full px-1 sm:px-4 text-center truncate flex items-center justify-center",
                   tone === "dark"
                     ? "border-white/40 text-white hover:border-white hover:text-white"
                     : undefined
-                }
+                )}
               >
                 {item.label}
               </Chip>

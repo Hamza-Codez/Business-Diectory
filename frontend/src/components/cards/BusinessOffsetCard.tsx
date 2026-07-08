@@ -1,10 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Star } from "lucide-react";
 import type { Business } from "@/types";
 import { getBusinessImage } from "@/lib/utils";
 
 export default function BusinessOffsetCard({ business }: { business: Business }) {
   const imgSrc = getBusinessImage(business);
+
+  // Deterministic pseudo-random mock rating
+  const hash = business.id.split("").reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  const mockScore = (3.5 + (hash % 16) / 10).toFixed(1); // 3.5 to 5.0
+  const mockReviews = 10 + (hash % 240);
 
   return (
     <div className="group relative block w-full focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2 rounded-sm">
@@ -33,6 +39,13 @@ export default function BusinessOffsetCard({ business }: { business: Business })
               {business.address.prefecture && `, ${business.address.prefecture}`}
             </p>
           )}
+
+          {/* Mock Star Rating */}
+          <div className="absolute bottom-2 right-3 flex items-center gap-1 transition-opacity duration-300">
+            <Star className="w-3 h-3 fill-[#F5A623] text-[#F5A623]" />
+            <span className="text-white/90 text-[10px] font-mono leading-none pt-0.5">{mockScore}</span>
+            <span className="text-white/40 text-[9px] leading-none pt-0.5">({mockReviews})</span>
+          </div>
         </div>
 
         {/* Red Box (Foreground) */}

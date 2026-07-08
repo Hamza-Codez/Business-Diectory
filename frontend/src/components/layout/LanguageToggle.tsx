@@ -14,13 +14,13 @@ export default function LanguageToggle({ lang }: { lang: Lang }) {
   }
 
   return (
-    <div className="flex  items-center border border-line font-mono text-xs">
+    <div className="flex items-center border border-line font-mono text-[10px] sm:text-xs shrink-0">
       <button
         type="button"
         onClick={() => setLang("en")}
         aria-pressed={lang === "en"}
         className={cn(
-          "px-2.5 py-1.5 transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary cursor-pointer",
+          "px-2 py-1.5 sm:px-2.5 sm:py-1.5 whitespace-nowrap transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary cursor-pointer",
           lang === "en" ? "bg-primary text-white" : "text-muted hover:text-primary",
         )}
       >
@@ -31,7 +31,7 @@ export default function LanguageToggle({ lang }: { lang: Lang }) {
         onClick={() => setLang("ja")}
         aria-pressed={lang === "ja"}
         className={cn(
-          "px-2.5 py-1.5 transition-colors cursor-pointer duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary",
+          "px-2 py-1.5 sm:px-2.5 sm:py-1.5 whitespace-nowrap transition-colors cursor-pointer duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary",
           lang === "ja" ? "bg-primary text-white" : "text-muted hover:text-primary",
         )}
       >

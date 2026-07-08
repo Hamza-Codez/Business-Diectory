@@ -13,7 +13,7 @@ export function Wordmark() {
   return (
     <Link
       href="/"
-      className="flex min-w-0 items-center gap-2 font-display text-base font-semibold text-ink sm:gap-2.5 sm:text-xl"
+      className="flex items-center gap-2 font-display text-sm sm:text-xl font-semibold text-ink sm:gap-2.5"
     >
       <Image
         src="/assets/cherry.png"
@@ -22,7 +22,7 @@ export function Wordmark() {
         height={24}
         className="shrink-0 animate-[spin_2s_linear_infinite]"
       />
-      <span className="truncate">Japan Business Directory</span>
+      <span className="leading-tight">Japan Business Directory</span>
     </Link>
   );
 }
@@ -54,7 +54,7 @@ export default async function Header() {
           <LanguageToggle lang={lang} />
         </nav>
 
-        <div className="flex items-center gap-3 lg:hidden ">
+        <div className="flex items-center gap-2 sm:gap-3 lg:hidden shrink-0">
           <LanguageToggle lang={lang} />
           <MobileNav links={links} cta={{ href: CTA_HREF, label: m.nav.cta }} />
         </div>

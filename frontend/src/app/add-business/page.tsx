@@ -32,8 +32,8 @@ export default async function AddBusinessPage() {
         </div>
 
         {/* Elegant Triptych Image Display (Thin embellishments) */}
-        <div className="relative w-full h-[240px] sm:h-[320px] md:h-[400px] mb-16 grid grid-cols-3 gap-2 md:gap-4">
-          <div className="relative w-full h-full border border-ink/10 overflow-visible group">
+        <div className="relative w-full sm:h-[320px] md:h-[400px] mb-16 grid grid-cols-3 gap-2 md:gap-4">
+          <div className="relative w-full aspect-square sm:aspect-auto sm:h-full border border-ink/10 overflow-visible group">
             <div className="relative w-full h-full overflow-hidden">
               <Image
                 src="/assets/addbusiness1.jpg"
@@ -44,13 +44,13 @@ export default async function AddBusinessPage() {
               <div className="absolute inset-0 border-[0.5px] border-black/5 pointer-events-none"></div>
             </div>
             {/* Overlapping Primary Vector */}
-            <div className="absolute -bottom-6 -right-4 md:-right-8 bg-primary text-white p-3 md:p-4 shadow-lg z-20 flex items-center gap-3 w-40 md:w-48 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-              <TrendingUp size={20} className="shrink-0" />
-              <span className="font-display text-xs md:text-sm font-semibold tracking-wide">{t.highVisibility}</span>
+            <div className="absolute -bottom-2 -right-1 sm:-bottom-6 sm:-right-4 md:-right-8 bg-primary text-white p-1.5 sm:p-3 md:p-4 shadow-lg z-20 flex items-center gap-1 sm:gap-3 w-[110%] sm:w-40 md:w-48 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+              <TrendingUp className="w-3 h-3 sm:w-5 sm:h-5 shrink-0" />
+              <span className="font-display text-[8px] sm:text-xs md:text-sm font-semibold tracking-wide leading-tight">{t.highVisibility}</span>
             </div>
           </div>
           
-          <div className="relative w-full h-full border border-ink/10 overflow-visible group mt-4 md:mt-8">
+          <div className="relative w-full aspect-square sm:aspect-auto sm:h-full border border-ink/10 overflow-visible group mt-4 md:mt-8">
             <div className="relative w-full h-full overflow-hidden">
               <Image
                 src="/assets/addbusiness2.jpg"
@@ -61,13 +61,13 @@ export default async function AddBusinessPage() {
               <div className="absolute inset-0 border-[0.5px] border-black/5 pointer-events-none"></div>
             </div>
             {/* Overlapping Black Vector */}
-            <div className="absolute -top-6 -left-4 md:-left-8 bg-ink text-white p-3 md:p-4 shadow-lg z-20 flex items-center gap-3 w-40 md:w-48 transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-              <Users size={20} className="shrink-0 text-primary" />
-              <span className="font-display text-xs md:text-sm font-semibold tracking-wide">{t.b2bNetwork}</span>
+            <div className="absolute -top-2 -left-1 sm:-top-6 sm:-left-4 md:-left-8 bg-ink text-white p-1.5 sm:p-3 md:p-4 shadow-lg z-20 flex items-center gap-1 sm:gap-3 w-[110%] sm:w-40 md:w-48 transform -translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+              <Users className="w-3 h-3 sm:w-5 sm:h-5 shrink-0 text-primary" />
+              <span className="font-display text-[8px] sm:text-xs md:text-sm font-semibold tracking-wide leading-tight">{t.b2bNetwork}</span>
             </div>
           </div>
           
-          <div className="relative w-full h-full border border-ink/10 overflow-visible group">
+          <div className="relative w-full aspect-square sm:aspect-auto sm:h-full border border-ink/10 overflow-visible group">
             <div className="relative w-full h-full overflow-hidden">
               <Image
                 src="/assets/addbusiness3.jpg"
@@ -78,9 +78,9 @@ export default async function AddBusinessPage() {
               <div className="absolute inset-0 border-[0.5px] border-black/5 pointer-events-none"></div>
             </div>
             {/* Overlapping Primary Vector */}
-            <div className="absolute -bottom-6 -left-4 md:-left-8 bg-primary text-white p-3 md:p-4 shadow-lg z-20 flex items-center gap-3 w-40 md:w-48 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
-              <ShieldCheck size={20} className="shrink-0" />
-              <span className="font-display text-xs md:text-sm font-semibold tracking-wide">{t.verifiedTrust}</span>
+            <div className="absolute -bottom-2 -left-1 sm:-bottom-6 sm:-left-4 md:-left-8 bg-primary text-white p-1.5 sm:p-3 md:p-4 shadow-lg z-20 flex items-center gap-1 sm:gap-3 w-[110%] sm:w-40 md:w-48 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+              <ShieldCheck className="w-3 h-3 sm:w-5 sm:h-5 shrink-0" />
+              <span className="font-display text-[8px] sm:text-xs md:text-sm font-semibold tracking-wide leading-tight">{t.verifiedTrust}</span>
             </div>
           </div>
           
