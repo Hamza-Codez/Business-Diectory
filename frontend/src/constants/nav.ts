@@ -7,4 +7,4 @@ export const NAV_LINKS: { key: NavKey; href: string }[] = [
   { key: "contact", href: "/contact" },
 ];
 
-export const CTA_HREF = "/contact";
+export const CTA_HREF = "/add-business";

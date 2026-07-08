@@ -7,14 +7,16 @@ import ConnectCta from "@/components/sections/ConnectCta";
 import PopularCategories from "@/components/sections/PopularCategories";
 import RecentArticles from "@/components/sections/RecentArticles";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
+import { getLang } from "@/lib/i18n";
 
-export default function Home() {
+export default async function Home() {
+  const lang = await getLang();
   return (
     <main className="flex-1">
       <Hero />
       <FeaturedCategories />
       <SearchBand />
-      <RandomCategoryGrid />
+      <RandomCategoryGrid lang={lang} />
       <ListedBusinesses />
       <ConnectCta />
       <PopularCategories />

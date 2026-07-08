@@ -15,7 +15,7 @@ export default async function Hero() {
       <HeroCarousel />
       <Container className="relative py-16 lg:py-24">
         <p className="font-mono text-xs uppercase tracking-widest text-white/80">
-          日本のビジネス — Japan Business Directory
+          {m.heroBadge}
         </p>
         <h1
           className={cn(
@@ -40,7 +40,7 @@ export default async function Hero() {
             placeholder={m.searchBand.keywordPlaceholder}
           />
         </div>
-        <HeroStats />
+        <HeroStats lang={lang} />
       </Container>
     </section>
   );

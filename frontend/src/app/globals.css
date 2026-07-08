@@ -67,4 +67,9 @@ html {
 
 body {
   @apply bg-white font-sans text-body antialiased;
+  /* Guard against horizontal scroll from decorative, absolutely-positioned
+     elements (hero/triptych/overlap accents) on small screens. `clip` (not
+     `hidden`) avoids turning body into a scroll container, so the sticky
+     header keeps working. */
+  overflow-x: clip;
 }

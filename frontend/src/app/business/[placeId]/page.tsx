@@ -9,6 +9,8 @@ import Container from "@/components/layout/Container";
 import BusinessCard from "@/components/cards/BusinessCard";
 import MapBlock from "@/components/business/MapBlock";
 import { CATEGORIES, categoryLabel } from "@/constants/categories";
+import { MESSAGES } from "@/constants/messages";
+import { getLang } from "@/lib/i18n";
 
 export async function generateMetadata({ params }: { params: Promise<{ placeId: string }> }) {
   const { placeId } = await params;
@@ -32,8 +34,11 @@ export default async function BusinessDetail({ params }: { params: Promise<{ pla
     notFound();
   }
 
+  const lang = await getLang();
+  const m = MESSAGES[lang].businessDetail;
+  const bc = MESSAGES[lang].breadcrumb;
   const categoryDef = CATEGORIES.find((c) => c.slug === business.category);
-  const catName = categoryDef ? categoryLabel(categoryDef, "en") : business.category;
+  const catName = categoryDef ? categoryLabel(categoryDef, lang) : business.category;
 
   // Nearby strip
   let nearby: typeof business[] = [];
@@ -53,7 +58,7 @@ export default async function BusinessDetail({ params }: { params: Promise<{ pla
       <Container>
         {/* Breadcrumb */}
         <nav className="mb-6 text-sm text-body font-mono">
-          <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+          <Link href="/" className="hover:text-primary transition-colors">{bc.home}</Link>
           <span className="mx-2">/</span>
           <Link href={`/search?category=${business.category}`} className="hover:text-primary transition-colors capitalize">
             {catName}
@@ -90,7 +95,7 @@ export default async function BusinessDetail({ params }: { params: Promise<{ pla
                       <MapPin size={20} aria-hidden="true" className="text-primary" />
                     </div>
                     <div>
-                      <h2 className="text-xs uppercase tracking-widest font-mono text-muted mb-1">Address</h2>
+                      <h2 className="text-xs uppercase tracking-widest font-mono text-muted mb-1">{m.address}</h2>
                       <p className="font-mono text-ink leading-relaxed">{business.address.formatted}</p>
                     </div>
                   </li>
@@ -102,7 +107,7 @@ export default async function BusinessDetail({ params }: { params: Promise<{ pla
                       <Phone size={20} aria-hidden="true" className="text-primary" />
                     </div>
                     <div>
-                      <h2 className="text-xs uppercase tracking-widest font-mono text-muted mb-1">Phone</h2>
+                      <h2 className="text-xs uppercase tracking-widest font-mono text-muted mb-1">{m.phone}</h2>
                       <a href={`tel:${business.phone.replace(/[^\d+]/g, "")}`} className="font-mono text-ink hover:text-primary transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
                         {business.phone}
                       </a>
@@ -116,7 +121,7 @@ export default async function BusinessDetail({ params }: { params: Promise<{ pla
                       <Clock size={20} aria-hidden="true" className="text-primary" />
                     </div>
                     <div>
-                      <h2 className="text-xs uppercase tracking-widest font-mono text-muted mb-1">Hours</h2>
+                      <h2 className="text-xs uppercase tracking-widest font-mono text-muted mb-1">{m.hours}</h2>
                       <p className="font-mono text-ink leading-relaxed">{business.hours}</p>
                     </div>
                   </li>
@@ -128,14 +133,14 @@ export default async function BusinessDetail({ params }: { params: Promise<{ pla
                       <ExternalLink size={20} aria-hidden="true" className="text-primary" />
                     </div>
                     <div>
-                      <h2 className="text-xs uppercase tracking-widest font-mono text-muted mb-1">Website</h2>
+                      <h2 className="text-xs uppercase tracking-widest font-mono text-muted mb-1">{m.website}</h2>
                       <a 
                         href={business.website} 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="font-mono text-ink hover:text-primary transition-colors flex items-center gap-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                       >
-                        Visit site <ExternalLink size={14} />
+                        {m.visitSite} <ExternalLink size={14} />
                       </a>
                     </div>
                   </li>
@@ -171,7 +176,7 @@ export default async function BusinessDetail({ params }: { params: Promise<{ pla
                 rel="noopener noreferrer"
                 className="flex items-center justify-center w-full py-4 px-6 border-2 border-primary text-primary font-mono text-sm uppercase tracking-widest hover:bg-primary hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
               >
-                Get directions
+                {m.getDirections}
               </a>
             </div>
           )}
@@ -181,11 +186,13 @@ export default async function BusinessDetail({ params }: { params: Promise<{ pla
         {nearby.length >= 2 && (
           <div className="mt-24 pt-12 border-t border-line">
             <h2 className="text-2xl font-bold text-ink mb-8">
-              More in {catName} {business.address.city ? `near ${business.address.city}` : "nearby"}
+              {m.moreIn
+                .replace("{c}", catName)
+                .replace("{loc}", business.address.city ? m.near.replace("{city}", business.address.city) : m.nearby)}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {nearby.map((biz) => (
-                <BusinessCard key={biz.id} business={biz} />
+                <BusinessCard key={biz.id} business={biz} lang={lang} />
               ))}
             </div>
           </div>

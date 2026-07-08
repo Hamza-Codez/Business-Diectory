@@ -13,16 +13,16 @@ export function Wordmark() {
   return (
     <Link
       href="/"
-      className="flex items-center gap-2.5 font-display text-xl font-semibold text-ink"
+      className="flex min-w-0 items-center gap-2 font-display text-base font-semibold text-ink sm:gap-2.5 sm:text-xl"
     >
-      <Image 
+      <Image
         src="/assets/cherry.png"
         alt="Cherry Logo"
         width={24}
         height={24}
-        className="animate-[spin_2s_linear_infinite]"
+        className="shrink-0 animate-[spin_2s_linear_infinite]"
       />
-      Japan Business Directory
+      <span className="truncate">Japan Business Directory</span>
     </Link>
   );
 }

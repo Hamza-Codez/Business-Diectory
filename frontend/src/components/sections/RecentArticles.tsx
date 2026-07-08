@@ -6,8 +6,8 @@ import { getAllArticles } from "@/lib/articles";
 import { getLang } from "@/lib/i18n";
 
 export default async function RecentArticles() {
-  const [allArticles, lang] = await Promise.all([getAllArticles(), getLang()]);
-  const articles = allArticles.slice(0, 5);
+  const lang = await getLang();
+  const articles = getAllArticles(lang).slice(0, 5);
   if (articles.length === 0) return null;
 
   const m = MESSAGES[lang];

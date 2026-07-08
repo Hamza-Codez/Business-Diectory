@@ -129,18 +129,18 @@ export default async function SearchPage({
 
           {isError ? (
             <div className="mt-10">
-              <p className="text-base text-muted">Search is temporarily unavailable — try again in a moment.</p>
+              <p className="text-base text-muted">{m.search.unavailable}</p>
               <Button href={searchHref({ query, location, category, show })} className="mt-4">
-                Retry
+                {m.search.retry}
               </Button>
             </div>
           ) : businesses.length === 0 ? (
             <div className="mt-10">
-              <p className="text-base text-muted">No businesses found for this search.</p>
+              <p className="text-base text-muted">{m.search.empty}</p>
               <div className="mt-6 flex gap-2">
-                <Chip href={searchHref({ category: "food-beverages" })}>Restaurants</Chip>
-                <Chip href={searchHref({ category: "businesses-trades" })}>Services</Chip>
-                <Chip href={searchHref({ category: "hotels-stays" })}>Hotels</Chip>
+                <Chip href={searchHref({ category: "food-beverages" })}>{m.search.restaurants}</Chip>
+                <Chip href={searchHref({ category: "businesses-trades" })}>{m.search.services}</Chip>
+                <Chip href={searchHref({ category: "hotels-stays" })}>{m.search.hotels}</Chip>
               </div>
             </div>
           ) : (
@@ -148,10 +148,10 @@ export default async function SearchPage({
               {(relaxed || radiusKm) && (
                 <div className="mt-6 space-y-1">
                   {radiusKm && (
-                    <p className="text-sm text-primary">Showing results within {radiusKm} km.</p>
+                    <p className="text-sm text-primary">{m.search.within.replace("{n}", String(radiusKm))}</p>
                   )}
                   {relaxed && categoryDef && (
-                    <p className="text-sm text-primary">No exact matches — showing nearby {categoryLabel(categoryDef, lang)} results instead.</p>
+                    <p className="text-sm text-primary">{m.search.noExact.replace("{c}", categoryLabel(categoryDef, lang))}</p>
                   )}
                 </div>
               )}
@@ -177,7 +177,7 @@ export default async function SearchPage({
 
           {hasHotpepper && (
             <p className="mt-8 font-mono text-xs text-muted">
-              Powered by Hot Pepper Gourmet Web Service
+              {m.search.powered}
             </p>
           )}
         </Container>

@@ -31,6 +31,100 @@ type Messages = {
     loadMore: string;
     empty: string;
     error: string;
+    unavailable: string;
+    retry: string;
+    restaurants: string;
+    services: string;
+    hotels: string;
+    within: string; // "{n}" is replaced with the km radius
+    noExact: string; // "{c}" is replaced with the category label
+    powered: string;
+  };
+  heroBadge: string;
+  heroStats: {
+    places: string;
+    live: string;
+    liveLabel: string;
+    users: string;
+    prefectures: string;
+  };
+  listed: { eyebrow: string; title: string; subtitle: string; viewAll: string };
+  directory: { eyebrow: string; title: string; subtitle: string; explore: string };
+  categoriesPage: { eyebrow: string; title: string; subtitle: string };
+  articlesPage: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    empty: string;
+    more: string;
+  };
+  breadcrumb: { home: string; articles: string };
+  businessCard: { website: string; viewDetails: string };
+  businessDetail: {
+    address: string;
+    phone: string;
+    hours: string;
+    website: string;
+    visitSite: string;
+    getDirections: string;
+    moreIn: string; // "{c}" category, "{loc}" location suffix
+    near: string; // "{city}"
+    nearby: string;
+  };
+  contact: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    whyPartner: string;
+    rapidResponse: string;
+    rapidResponseDesc: string;
+    b2bFocused: string;
+    b2bFocusedDesc: string;
+    sendMessage: string;
+    firstName: string;
+    firstNamePlaceholder: string;
+    lastName: string;
+    lastNamePlaceholder: string;
+    email: string;
+    emailPlaceholder: string;
+    subject: string;
+    subjectPlaceholder: string;
+    message: string;
+    messagePlaceholder: string;
+    submit: string;
+  };
+  addBusiness: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    highVisibility: string;
+    b2bNetwork: string;
+    verifiedTrust: string;
+    basicInfo: string;
+    businessName: string;
+    businessNamePlaceholder: string;
+    category: string;
+    selectCategory: string;
+    catManufacturing: string;
+    catTechnology: string;
+    catRetail: string;
+    catServices: string;
+    yearEstablished: string;
+    yearEstablishedPlaceholder: string;
+    locationContact: string;
+    fullAddress: string;
+    fullAddressPlaceholder: string;
+    phone: string;
+    phonePlaceholder: string;
+    publicEmail: string;
+    publicEmailPlaceholder: string;
+    digitalPresence: string;
+    website: string;
+    websitePlaceholder: string;
+    description: string;
+    descriptionPlaceholder: string;
+    disclaimer: string;
+    submit: string;
   };
 };
 
@@ -105,6 +199,120 @@ export const MESSAGES: Record<Lang, Messages> = {
       loadMore: "Load more",
       empty: "No businesses found for this search.",
       error: "Couldn't load results. Refresh to try again.",
+      unavailable: "Search is temporarily unavailable — try again in a moment.",
+      retry: "Retry",
+      restaurants: "Restaurants",
+      services: "Services",
+      hotels: "Hotels",
+      within: "Showing results within {n} km.",
+      noExact: "No exact matches — showing nearby {c} results instead.",
+      powered: "Powered by Hot Pepper Gourmet Web Service",
+    },
+    heroBadge: "日本のビジネス — Japan Business Directory",
+    heroStats: {
+      places: "Places mapped across Japan",
+      live: "Live",
+      liveLabel: "Data · updated hourly",
+      users: "Users helped",
+      prefectures: "Prefectures · nationwide coverage",
+    },
+    listed: {
+      eyebrow: "ビジネス — BUSINESSES",
+      title: "Listed Businesses",
+      subtitle: "A rotating sample of what's listed across Japan.",
+      viewAll: "View All Businesses",
+    },
+    directory: {
+      eyebrow: "ディレクトリ — DIRECTORY",
+      title: "Finding Experts",
+      subtitle: "Swipe through our diverse range of business categories.",
+      explore: "Explore further",
+    },
+    categoriesPage: {
+      eyebrow: "カテゴリー",
+      title: "All Categories",
+      subtitle: "Browse all business categories across Japan",
+    },
+    articlesPage: {
+      eyebrow: "記事 — ARTICLES",
+      title: "Articles",
+      subtitle: "Guides to finding, reaching, and working with businesses in Japan.",
+      empty: "No articles found.",
+      more: "More articles",
+    },
+    breadcrumb: { home: "Home", articles: "Articles" },
+    businessCard: { website: "Website", viewDetails: "View details for" },
+    businessDetail: {
+      address: "Address",
+      phone: "Phone",
+      hours: "Hours",
+      website: "Website",
+      visitSite: "Visit site",
+      getDirections: "Get directions",
+      moreIn: "More in {c} {loc}",
+      near: "near {city}",
+      nearby: "nearby",
+    },
+    contact: {
+      eyebrow: "お問い合わせ — CONTACT",
+      title: "Let's build together",
+      subtitle:
+        "Whether you need support, want to list your business, or are looking for partnerships across Japan, our team is ready.",
+      whyPartner: "Why Partner With Us?",
+      rapidResponse: "Rapid Response",
+      rapidResponseDesc:
+        "We aim to reply to all inquiries within 24 hours during standard business days.",
+      b2bFocused: "B2B Focused",
+      b2bFocusedDesc:
+        "Our network specifically targets high-value B2B relationships across all 47 prefectures.",
+      sendMessage: "Send a Message",
+      firstName: "First Name",
+      firstNamePlaceholder: "John",
+      lastName: "Last Name",
+      lastNamePlaceholder: "Doe",
+      email: "Email Address",
+      emailPlaceholder: "john@example.com",
+      subject: "Subject",
+      subjectPlaceholder: "How can we help?",
+      message: "Message",
+      messagePlaceholder: "Write your message here...",
+      submit: "Transmit Message",
+    },
+    addBusiness: {
+      eyebrow: "ビジネスを登録 — ADD BUSINESS",
+      title: "Expand Your Reach in Japan",
+      subtitle:
+        "Join thousands of trusted companies. Submit your business details below to be verified and listed in our directory.",
+      highVisibility: "High Visibility",
+      b2bNetwork: "B2B Network",
+      verifiedTrust: "Verified Trust",
+      basicInfo: "1. Basic Information",
+      businessName: "Business Name *",
+      businessNamePlaceholder: "Acme Corp Japan",
+      category: "Category *",
+      selectCategory: "Select a category",
+      catManufacturing: "Manufacturing",
+      catTechnology: "Technology & IT",
+      catRetail: "Retail & Trade",
+      catServices: "Professional Services",
+      yearEstablished: "Year Established",
+      yearEstablishedPlaceholder: "e.g. 1995",
+      locationContact: "2. Location & Contact",
+      fullAddress: "Full Address *",
+      fullAddressPlaceholder: "1-1-1 Marunouchi, Chiyoda-ku, Tokyo",
+      phone: "Phone Number *",
+      phonePlaceholder: "+81 3-XXXX-XXXX",
+      publicEmail: "Public Email",
+      publicEmailPlaceholder: "contact@acmecorp.jp",
+      digitalPresence: "3. Digital Presence & Details",
+      website: "Website URL",
+      websitePlaceholder: "https://acmecorp.jp",
+      description: "Business Description (Max 500 characters) *",
+      descriptionPlaceholder:
+        "Briefly describe your products, services, and target market...",
+      disclaimer:
+        "By submitting this form, you verify that you are an authorized representative of this business. All submissions are manually reviewed before publishing.",
+      submit: "Submit Listing",
     },
   },
   ja: {
@@ -175,6 +383,120 @@ export const MESSAGES: Record<Lang, Messages> = {
       loadMore: "もっと見る",
       empty: "該当するビジネスが見つかりませんでした。",
       error: "結果を読み込めませんでした。再読み込みしてください。",
+      unavailable: "検索は一時的に利用できません。しばらくしてからもう一度お試しください。",
+      retry: "再試行",
+      restaurants: "レストラン",
+      services: "サービス",
+      hotels: "ホテル",
+      within: "{n} km以内の結果を表示しています。",
+      noExact: "完全に一致する結果はありません。近くの{c}の結果を表示しています。",
+      powered: "提供：ホットペッパー グルメ ウェブサービス",
+    },
+    heroBadge: "日本のビジネス — Japan Business Directory",
+    heroStats: {
+      places: "日本全国でマッピングされた場所",
+      live: "ライブ",
+      liveLabel: "データ · 毎時更新",
+      users: "支援したユーザー数",
+      prefectures: "都道府県 · 全国対応",
+    },
+    listed: {
+      eyebrow: "ビジネス — BUSINESSES",
+      title: "掲載中のビジネス",
+      subtitle: "日本全国の掲載情報から入れ替わりでご紹介します。",
+      viewAll: "すべてのビジネスを見る",
+    },
+    directory: {
+      eyebrow: "ディレクトリ — DIRECTORY",
+      title: "専門家を見つける",
+      subtitle: "多彩なビジネスカテゴリーをスワイプしてご覧ください。",
+      explore: "さらに見る",
+    },
+    categoriesPage: {
+      eyebrow: "カテゴリー",
+      title: "すべてのカテゴリー",
+      subtitle: "日本全国のビジネスカテゴリーを閲覧",
+    },
+    articlesPage: {
+      eyebrow: "記事 — ARTICLES",
+      title: "記事",
+      subtitle: "日本のビジネスを見つけ、つながり、協働するためのガイド。",
+      empty: "記事が見つかりませんでした。",
+      more: "その他の記事",
+    },
+    breadcrumb: { home: "ホーム", articles: "記事" },
+    businessCard: { website: "ウェブサイト", viewDetails: "詳細を見る：" },
+    businessDetail: {
+      address: "住所",
+      phone: "電話番号",
+      hours: "営業時間",
+      website: "ウェブサイト",
+      visitSite: "サイトを見る",
+      getDirections: "経路を表示",
+      moreIn: "{loc}の{c}をもっと見る",
+      near: "{city}周辺",
+      nearby: "近く",
+    },
+    contact: {
+      eyebrow: "お問い合わせ — CONTACT",
+      title: "一緒に築きましょう",
+      subtitle:
+        "サポートが必要な方、ビジネスを掲載したい方、日本全国でのパートナーシップをお探しの方 — 私たちのチームがお手伝いします。",
+      whyPartner: "私たちと組む理由は？",
+      rapidResponse: "迅速な対応",
+      rapidResponseDesc:
+        "通常営業日には、すべてのお問い合わせに24時間以内の返信を目指しています。",
+      b2bFocused: "B2Bに特化",
+      b2bFocusedDesc:
+        "私たちのネットワークは、47都道府県すべてにわたる価値の高いB2B関係を対象としています。",
+      sendMessage: "メッセージを送る",
+      firstName: "名",
+      firstNamePlaceholder: "太郎",
+      lastName: "姓",
+      lastNamePlaceholder: "山田",
+      email: "メールアドレス",
+      emailPlaceholder: "taro@example.com",
+      subject: "件名",
+      subjectPlaceholder: "どのようなご用件ですか？",
+      message: "メッセージ",
+      messagePlaceholder: "ここにメッセージをご記入ください...",
+      submit: "メッセージを送信",
+    },
+    addBusiness: {
+      eyebrow: "ビジネスを登録 — ADD BUSINESS",
+      title: "日本でのリーチを広げましょう",
+      subtitle:
+        "信頼される数千の企業に加わりましょう。以下にビジネス情報をご入力いただくと、確認のうえディレクトリに掲載されます。",
+      highVisibility: "高い露出",
+      b2bNetwork: "B2Bネットワーク",
+      verifiedTrust: "認証済みの信頼",
+      basicInfo: "1. 基本情報",
+      businessName: "ビジネス名 *",
+      businessNamePlaceholder: "Acme Corp Japan",
+      category: "カテゴリー *",
+      selectCategory: "カテゴリーを選択",
+      catManufacturing: "製造業",
+      catTechnology: "テクノロジー・IT",
+      catRetail: "小売・貿易",
+      catServices: "専門サービス",
+      yearEstablished: "設立年",
+      yearEstablishedPlaceholder: "例：1995",
+      locationContact: "2. 所在地・連絡先",
+      fullAddress: "住所 *",
+      fullAddressPlaceholder: "東京都千代田区丸の内1-1-1",
+      phone: "電話番号 *",
+      phonePlaceholder: "+81 3-XXXX-XXXX",
+      publicEmail: "公開用メール",
+      publicEmailPlaceholder: "contact@acmecorp.jp",
+      digitalPresence: "3. デジタルプレゼンス・詳細",
+      website: "ウェブサイトURL",
+      websitePlaceholder: "https://acmecorp.jp",
+      description: "ビジネスの説明（最大500文字）*",
+      descriptionPlaceholder:
+        "製品、サービス、対象市場について簡単にご説明ください...",
+      disclaimer:
+        "このフォームを送信することで、あなたがこのビジネスの正式な代表者であることを確認します。すべての送信内容は公開前に手動で審査されます。",
+      submit: "掲載を申請",
     },
   },
 };

@@ -6,6 +6,8 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import ArticleCard from "@/components/cards/ArticleCard";
 import { getAllArticles } from "@/lib/articles";
 import { formatDate } from "@/lib/utils";
+import { MESSAGES } from "@/constants/messages";
+import { getLang } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Articles | Japan Business Directory",
@@ -15,14 +17,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ArticlesPage() {
-  const articles = getAllArticles();
-  
+export default async function ArticlesPage() {
+  const lang = await getLang();
+  const articles = getAllArticles(lang);
+  const m = MESSAGES[lang];
+
   if (articles.length === 0) {
     return (
       <main className="flex-1 py-12 lg:py-20 bg-surface">
         <Container>
-          <p>No articles found.</p>
+          <p>{m.articlesPage.empty}</p>
         </Container>
       </main>
     );
@@ -37,19 +41,19 @@ export default function ArticlesPage() {
         <nav aria-label="Breadcrumb" className="mb-8">
           <ol className="flex items-center space-x-2 text-sm text-muted font-mono uppercase tracking-wider">
             <li>
-              <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+              <Link href="/" className="hover:text-primary transition-colors">{m.breadcrumb.home}</Link>
             </li>
             <li>/</li>
-            <li className="text-ink" aria-current="page">Articles</li>
+            <li className="text-ink" aria-current="page">{m.breadcrumb.articles}</li>
           </ol>
         </nav>
 
         {/* Heading */}
         <SectionHeading
           align="left"
-          eyebrow="記事 — ARTICLES"
-          title="Articles"
-          subtitle="Guides to finding, reaching, and working with businesses in Japan."
+          eyebrow={m.articlesPage.eyebrow}
+          title={m.articlesPage.title}
+          subtitle={m.articlesPage.subtitle}
         />
 
         <div className="mt-12 space-y-8 lg:space-y-12">

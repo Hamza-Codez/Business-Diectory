@@ -2,8 +2,21 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import type { Article } from "@/types";
+import type { Lang } from "@/constants/messages";
 
 const articlesDirectory = path.join(process.cwd(), "content", "articles");
+
+/**
+ * Resolves the markdown file to read for a given article base name and language.
+ * For Japanese, prefers a `<name>.ja.md` variant and falls back to the English `<name>.md`.
+ */
+function resolveArticlePath(baseName: string, lang: Lang): string {
+  if (lang === "ja") {
+    const jaPath = path.join(articlesDirectory, `${baseName}.ja.md`);
+    if (fs.existsSync(jaPath)) return jaPath;
+  }
+  return path.join(articlesDirectory, `${baseName}.md`);
+}
 
 /**
  * Validates if an image exists in the public directory.
@@ -46,18 +59,22 @@ function toIsoDate(value: unknown): string {
   return isNaN(date.getTime()) ? new Date().toISOString() : date.toISOString();
 }
 
-export function getAllArticles(): Article[] {
-  // Only process markdown files
+export function getAllArticles(lang: Lang = "en"): Article[] {
+  // Only process English markdown files as the source of truth; `.ja.md` are
+  // per-language variants keyed to the same base name, not separate articles.
   let fileNames: string[] = [];
   try {
-    fileNames = fs.readdirSync(articlesDirectory).filter((file) => file.endsWith(".md"));
+    fileNames = fs
+      .readdirSync(articlesDirectory)
+      .filter((file) => file.endsWith(".md") && !file.endsWith(".ja.md"));
   } catch (e) {
     console.error("Failed to read articles directory", e);
     return [];
   }
 
   const articles: Article[] = fileNames.flatMap((fileName) => {
-    const fullPath = path.join(articlesDirectory, fileName);
+    const baseName = fileName.replace(/\.md$/, "");
+    const fullPath = resolveArticlePath(baseName, lang);
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const { data } = matter(fileContents);
 
@@ -79,9 +96,9 @@ export function getAllArticles(): Article[] {
   return articles.sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));
 }
 
-export function getArticleBySlug(slug: string): { article: Article; content: string } | undefined {
+export function getArticleBySlug(slug: string, lang: Lang = "en"): { article: Article; content: string } | undefined {
   try {
-    const fullPath = path.join(articlesDirectory, `${slug}.md`);
+    const fullPath = resolveArticlePath(slug, lang);
     if (!fs.existsSync(fullPath)) return undefined;
 
     const fileContents = fs.readFileSync(fullPath, "utf8");

@@ -124,16 +124,14 @@ export default function SearchBandForm({
         <Select
           id="search-category"
           value={category}
-          onChange={(e) => setCategory(e.target.value)}
+          onChange={setCategory}
           className="h-14 lg:w-56"
-        >
-          <option value="">{m.allCategories}</option>
-          {CATEGORIES.map((c) => (
-            <option key={c.slug} value={c.slug}>
-              {categoryLabel(c, lang)}
-            </option>
-          ))}
-        </Select>
+          placeholder={m.allCategories}
+          options={[
+            { value: "", label: m.allCategories },
+            ...CATEGORIES.map((c) => ({ value: c.slug, label: categoryLabel(c, lang) }))
+          ]}
+        />
 
         <Button type="submit" size="lg" className="h-14 w-full lg:w-auto">
           {m.search}

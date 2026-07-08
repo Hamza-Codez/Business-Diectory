@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
+import { MESSAGES, type Lang } from "@/constants/messages";
 
 function useCounter(end: number, duration: number = 2000) {
   const [count, setCount] = useState(0);
@@ -79,30 +79,31 @@ function StatItem({
   );
 }
 
-export default function HeroStats() {
+export default function HeroStats({ lang = "en" }: { lang?: Lang }) {
+  const s = MESSAGES[lang].heroStats;
   return (
     <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-      <StatItem 
-        value={20000} 
-        suffix="+" 
-        label="Places mapped across Japan" 
+      <StatItem
+        value={20000}
+        suffix="+"
+        label={s.places}
         delay={100}
       />
-      <StatItem 
-        value="Live" 
-        label="Data · updated hourly" 
+      <StatItem
+        value={s.live}
+        label={s.liveLabel}
         delay={300}
         isLive={true}
       />
-      <StatItem 
-        value={15000} 
-        suffix="+" 
-        label="Users helped" 
+      <StatItem
+        value={15000}
+        suffix="+"
+        label={s.users}
         delay={500}
       />
-      <StatItem 
-        value={47} 
-        label="Prefectures · nationwide coverage" 
+      <StatItem
+        value={47}
+        label={s.prefectures}
         delay={700}
       />
     </div>

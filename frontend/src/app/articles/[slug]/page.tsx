@@ -7,6 +7,8 @@ import ReactMarkdown from "react-markdown";
 import Container from "@/components/layout/Container";
 import ArticleRow from "@/components/cards/ArticleRow";
 import { getAllArticles, getArticleBySlug, getValidImageUrl } from "@/lib/articles";
+import { MESSAGES } from "@/constants/messages";
+import { getLang } from "@/lib/i18n";
 
 export async function generateStaticParams() {
   const articles = getAllArticles();
@@ -17,7 +19,8 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const data = getArticleBySlug(slug);
+  const lang = await getLang();
+  const data = getArticleBySlug(slug, lang);
 
   if (!data) return {};
 
@@ -131,14 +134,16 @@ const MarkdownComponents = {
 
 export default async function ArticleDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const data = getArticleBySlug(slug);
+  const lang = await getLang();
+  const data = getArticleBySlug(slug, lang);
 
   if (!data) {
     notFound();
   }
 
   const { article, content } = data;
-  const allArticles = getAllArticles();
+  const m = MESSAGES[lang];
+  const allArticles = getAllArticles(lang);
   const moreArticles = allArticles.filter((a) => a.id !== article.id).slice(0, 3);
   
   // Format date correctly: "2026.07.02"
@@ -171,11 +176,11 @@ export default async function ArticleDetailPage({ params }: { params: Promise<{ 
           <nav aria-label="Breadcrumb" className="mb-6 md:mb-10">
             <ol className="flex flex-wrap items-center gap-2 text-sm text-muted font-mono uppercase tracking-wider">
               <li>
-                <Link href="/" className="hover:text-primary transition-colors">Home</Link>
+                <Link href="/" className="hover:text-primary transition-colors">{m.breadcrumb.home}</Link>
               </li>
               <li>/</li>
               <li>
-                <Link href="/articles" className="hover:text-primary transition-colors">Articles</Link>
+                <Link href="/articles" className="hover:text-primary transition-colors">{m.breadcrumb.articles}</Link>
               </li>
               <li>/</li>
               <li className="text-ink line-clamp-1" aria-current="page">{article.title}</li>
@@ -221,7 +226,7 @@ export default async function ArticleDetailPage({ params }: { params: Promise<{ 
             {/* Footer / More Articles */}
             <div className="mt-20 pt-12 border-t border-line">
               <h2 className="font-display text-2xl font-semibold text-ink mb-8">
-                More articles
+                {m.articlesPage.more}
               </h2>
               <div className="flex flex-col gap-6">
                 {moreArticles.map((item) => (

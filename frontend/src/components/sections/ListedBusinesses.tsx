@@ -2,9 +2,13 @@ import Container from "@/components/layout/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
 import { getFeaturedPool } from "@/lib/api";
+import { MESSAGES } from "@/constants/messages";
+import { getLang } from "@/lib/i18n";
 import FeaturedListingsGrid from "./FeaturedListingsGrid";
 
 export default async function ListedBusinesses() {
+  const lang = await getLang();
+  const m = MESSAGES[lang].listed;
   let pool: Awaited<ReturnType<typeof getFeaturedPool>>;
   try {
     pool = await getFeaturedPool();
@@ -27,15 +31,15 @@ export default async function ListedBusinesses() {
           <div className="size-4 bg-primary" aria-hidden="true" />
         </div>
         <SectionHeading
-          eyebrow="ビジネス — BUSINESSES"
-          title="Listed Businesses"
-          subtitle="A rotating sample of what's listed across Japan."
+          eyebrow={m.eyebrow}
+          title={m.title}
+          subtitle={m.subtitle}
         />
         <FeaturedListingsGrid pool={pool} />
 
         <div className="mt-12 flex justify-center">
           <Button href="/search" variant="primary">
-            View All Businesses
+            {m.viewAll}
           </Button>
         </div>
       </Container>

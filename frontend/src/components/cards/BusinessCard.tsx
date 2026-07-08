@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Clock, ExternalLink, JapaneseYen, MapPin, Phone } from "lucide-react";
 import { CATEGORIES, categoryLabel } from "@/constants/categories";
-import type { Lang } from "@/constants/messages";
+import { MESSAGES, type Lang } from "@/constants/messages";
 import type { Business } from "@/types";
 import { getBusinessImage } from "@/lib/utils";
 
@@ -15,13 +15,14 @@ export default function BusinessCard({
 }) {
   const categoryDef = CATEGORIES.find((c) => c.slug === business.category);
   const FallbackIcon = categoryDef?.icon;
+  const t = MESSAGES[lang].businessCard;
 
   const imageSrc = getBusinessImage(business);
 
   return (
     <div className="group relative flex gap-4 border border-line bg-white p-4 lg:p-5 hover:border-primary transition-colors focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2">
       <Link href={`/business/${encodeURIComponent(business.id)}`} className="absolute inset-0 z-10">
-        <span className="sr-only">View details for {business.name}</span>
+        <span className="sr-only">{t.viewDetails} {business.name}</span>
       </Link>
 
       <div className="relative h-24 w-24 shrink-0 sm:h-28 sm:w-28 bg-surface pointer-events-none">
@@ -90,7 +91,7 @@ export default function BusinessCard({
 
         {business.website && (
           <div className="mt-3 inline-flex items-center gap-1.5 text-sm text-primary">
-            Website
+            {t.website}
             <ExternalLink size={14} aria-hidden="true" />
           </div>
         )}
