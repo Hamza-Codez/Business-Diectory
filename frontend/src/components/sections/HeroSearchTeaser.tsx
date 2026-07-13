@@ -119,16 +119,7 @@ export default function HeroSearchTeaser({
     return () => clearTimeout(timer);
   }, [phase, charIndex, wordIndex, words]);
 
-  const handleJump = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    const el = document.getElementById("search");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-      setTimeout(() => {
-        document.getElementById("search-keyword")?.focus();
-      }, 500);
-    }
-  }, []);
+
 
   const currentText = words.length > 0 ? words[wordIndex % words.length].slice(0, charIndex) : "";
 
@@ -153,13 +144,10 @@ export default function HeroSearchTeaser({
         `}</style>
       </noscript>
 
-      <form action="#search" className="relative w-full sm:w-[280px] shrink-0 m-0 p-0">
-        <button
-          type="submit"
-          aria-label="Jump to search"
-          onClick={handleJump}
+      <div className="relative w-full sm:w-[280px] shrink-0 m-0 p-0">
+        <div
           className={cn(
-            "hero-teaser-bar relative flex items-center bg-white border border-line h-13 px-4 w-full overflow-hidden outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-transparent transition-all duration-500 ease-out sm:origin-left hover:bg-neutral-50",
+            "hero-teaser-bar relative flex items-center bg-white border border-line h-13 px-4 w-full overflow-hidden outline-none transition-all duration-500 ease-out sm:origin-left hover:bg-neutral-50",
             !mounted
               ? "opacity-0 sm:opacity-100 sm:[clip-path:inset(0_100%_0_0)]"
               : entered || reducedMotion
@@ -183,8 +171,8 @@ export default function HeroSearchTeaser({
               </>
             )}
           </span>
-        </button>
-      </form>
+        </div>
+      </div>
 
       <div
         className={cn(

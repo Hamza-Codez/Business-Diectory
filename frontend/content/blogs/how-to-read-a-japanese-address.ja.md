@@ -4,7 +4,7 @@ slug: "how-to-read-a-japanese-address"
 excerpt: "日本の住所は、大きな地域から小さな地域へと絞り込んでいく — 多くの欧米の方式とは逆です。読み解き方と、実際に建物を見つけるコツを解説します。"
 category: "ガイド"
 publishedAt: "2026-07-02"
-banner: "/images/articles/how-to-read-a-japanese-address/banner.webp"
+banner: "/images/blogs/how-to-read-a-japanese-address/banner.webp"
 ---
 
 ディレクトリの掲載情報は、突き詰めれば一つのことに行き着きます。「その場所を見つけられるか？」ということです。日本ではそれが、世界の多くの地域とは逆方向に働く住所システムを理解できるかどうかにかかっています。そしてその論理が分かってしまえば、もう二度と迷うことはありません。
@@ -15,7 +15,7 @@ banner: "/images/articles/how-to-read-a-japanese-address/banner.webp"
 
 同じ住所を国際的な用途のためにローマ字表記すると、欧米の慣習に合わせて順序が反転します。1-2-3 Jinnan, Shibuya-ku, Tokyo。同じ場所ですが、順序が逆になっています。この反転こそが最大の混乱の原因です。住所が「逆さま」に見えるときは、たいてい二つの方式のあいだで変換されただけなのです。
 
-![建物の壁に取り付けられた、地区と街区の番号を示す住居表示板](/images/articles/how-to-read-a-japanese-address/inline-1.webp)
+![建物の壁に取り付けられた、地区と街区の番号を示す住居表示板](/images/blogs/how-to-read-a-japanese-address/inline-1.webp)
 *建物に付けられた青と白の住居表示板は、地区・丁目・街区を示します — 日本にほとんど存在しない「通りの標識」の代わりです。*
 
 ## 三つの数字
@@ -34,7 +34,7 @@ banner: "/images/articles/how-to-read-a-japanese-address/banner.webp"
 
 大都市の中では、区を表す「区」、市を表す「市」が見られ、地方では町（-chō／-machi）や村（-mura／-son）を含む地域を表す「郡」が使われます。
 
-![日本の通りで掲げられた、ピンの落ちた地図アプリを表示するスマートフォン](/images/articles/how-to-read-a-japanese-address/inline-2.webp)
+![日本の通りで掲げられた、ピンの落ちた地図アプリを表示するスマートフォン](/images/blogs/how-to-read-a-japanese-address/inline-2.webp)
 *まず郵便番号、次に街区の番号。この二つがあれば、どんな地図アプリでも玄関先まで案内してくれます。*
 
 ## 実際に玄関を見つける

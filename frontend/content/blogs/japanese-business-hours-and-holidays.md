@@ -4,7 +4,7 @@ slug: "japanese-business-hours-and-holidays"
 excerpt: "Banks that close at 3pm, restaurants that nap between lunch and dinner, and a week in spring when the whole country is off — the rhythm of Japanese opening hours, explained."
 category: "Guides"
 publishedAt: "2026-06-24"
-banner: "/images/articles/japanese-business-hours-and-holidays/banner.webp"
+banner: "/images/blogs/japanese-business-hours-and-holidays/banner.webp"
 ---
 
 The hours line on a listing — something like `Mo-Fr 09:00-18:00; Sa 09:00-13:00; Su, PH off` — is short, but reading it well requires knowing the rhythms behind it. Japanese business hours follow patterns that surprise first-timers, and a few calendar clusters can close entire industries for days.
@@ -15,7 +15,7 @@ Offices generally run 9:00 to 18:00 on weekdays. Banks are the famous outlier: b
 
 Retail opens late by Western standards — department stores and malls commonly at 10:00 or 11:00 — and closes around 20:00. Convenience stores are the 24-hour exception that proves the rule. Clinics frequently split their day into morning and afternoon consultation blocks with a long midday break, and many close one weekday plus Sunday.
 
-![A shop curtain (noren) being hung at a storefront entrance in the morning](/images/articles/japanese-business-hours-and-holidays/inline-1.webp)
+![A shop curtain (noren) being hung at a storefront entrance in the morning](/images/blogs/japanese-business-hours-and-holidays/inline-1.webp)
 *The noren going up is Japan's universal "we're open" — when it comes down, service is done regardless of what the posted hours say.*
 
 ## The restaurant split and the last order
@@ -38,7 +38,7 @@ Three periods a year reshape the entire calendar, and any visit or business deal
 
 **Obon (around August 13–16).** Not an official national holiday, but a deep-rooted tradition of returning to family hometowns. Many companies and small businesses close for several days, and transport is at its most crowded.
 
-![A calendar page for early May with several dates marked in red](/images/articles/japanese-business-hours-and-holidays/inline-2.webp)
+![A calendar page for early May with several dates marked in red](/images/blogs/japanese-business-hours-and-holidays/inline-2.webp)
 *Golden Week on paper: four red days that, in practice, most of corporate Japan turns into seven.*
 
 ## Reading the PH in a listing

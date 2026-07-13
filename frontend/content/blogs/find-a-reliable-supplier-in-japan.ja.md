@@ -4,7 +4,7 @@ slug: "find-a-reliable-supplier-in-japan"
 excerpt: "最初のディレクトリ検索から最初の発注書まで — 日本のサプライヤーを見つけ、確認し、アプローチするための実践的なプロセスです。"
 category: "ビジネス"
 publishedAt: "2026-06-08"
-banner: "/images/articles/find-a-reliable-supplier-in-japan/banner.webp"
+banner: "/images/blogs/find-a-reliable-supplier-in-japan/banner.webp"
 ---
 
 日本のサプライヤーの世界は、準備した者に報います。品質と安定性の高さは有名ですが、取引をどう始めるかという期待値の高さも同様です。これは「サプライヤーが必要だ」という状態から実際の取引関係へと至るための実践的な手順です — おそらく今あなたがいるであろう地点、つまりディレクトリ検索から始めます。
@@ -19,7 +19,7 @@ banner: "/images/articles/find-a-reliable-supplier-in-japan/banner.webp"
 
 地図で位置を確認できる実在の住所。つながる電話番号 — 電話に出ることは、日本のビジネス文化では非常に重要です。ウェブサイトは、たとえ古びていても構いません。多くの優れた小規模メーカーは15年前のように見えるサイトを持っていますが、それは何ら否定的な意味を持ちません。そして法人については、国税庁の公開登録簿で確認できる13桁の法人番号 — 会社が法的に存在すること、登記上の名称と所在地が聞いていた内容と一致することを確認できます。
 
-![検査のため工房の作業台に並べられた精密金属部品の列](/images/articles/find-a-reliable-supplier-in-japan/inline-1.webp)
+![検査のため工房の作業台に並べられた精密金属部品の列](/images/blogs/find-a-reliable-supplier-in-japan/inline-1.webp)
 *日本の小さな工房は、しばしば世界的なサプライチェーンを支えています — 店構えは質素でも、その公差は世界水準です。*
 
 ## 日本流に最初の接触をする
@@ -36,7 +36,7 @@ banner: "/images/articles/find-a-reliable-supplier-in-japan/banner.webp"
 
 継続的な関係のためには、訪問 — 工場へ、あるいは業界の展示会で — が、依然として日本のビジネスにおける最強の信頼構築手段です。とりわけ展示会は、何か月分もの紹介を数日に凝縮してくれます。製造、食品、デザインにわたる大規模な展示会が、東京と大阪で年間を通じて開かれ、出展者は意思決定者をブースに配置しています。名刺と礼儀作法の基本を携えて訪れれば、扉はすぐに開きます。
 
-![展示ブースと出展者と話す来場者でにぎわう大きな展示会場](/images/articles/find-a-reliable-supplier-in-japan/inline-2.webp)
+![展示ブースと出展者と話す来場者でにぎわう大きな展示会場](/images/blogs/find-a-reliable-supplier-in-japan/inline-2.webp)
 *展示会の通路は、ディレクトリの掲載から握手へと至る最速の道です — ほとんどのブースには、実際に「イエス」と言える人が配置されています。*
 
 ## 注意すべき兆候は、正直なところ少ない

@@ -4,7 +4,7 @@ slug: "japanese-business-hours-and-holidays"
 excerpt: "15時に閉まる銀行、昼食と夕食のあいだに休む飲食店、そして国じゅうが休みになる春の一週間 — 日本の営業時間のリズムを解説します。"
 category: "ガイド"
 publishedAt: "2026-06-24"
-banner: "/images/articles/japanese-business-hours-and-holidays/banner.webp"
+banner: "/images/blogs/japanese-business-hours-and-holidays/banner.webp"
 ---
 
 掲載情報の営業時間の行 — たとえば `Mo-Fr 09:00-18:00; Sa 09:00-13:00; Su, PH off` のようなもの — は短いですが、うまく読むにはその背後にあるリズムを知る必要があります。日本の営業時間は初めての人を驚かせるパターンに従っており、いくつかの暦の節目は、業界まるごとを数日間閉ざしてしまうことがあります。
@@ -15,7 +15,7 @@ banner: "/images/articles/japanese-business-hours-and-holidays/banner.webp"
 
 小売は欧米の基準からすると遅く開きます — 百貨店やモールは10時か11時が一般的で — 20時ごろに閉まります。コンビニエンスストアは、規則を証明する24時間の例外です。診療所はしばしば一日を午前と午後の診察枠に分け、長い昼休みを挟み、平日一日と日曜を休みにするところが多くあります。
 
-![朝、店先の入り口に暖簾が掛けられているところ](/images/articles/japanese-business-hours-and-holidays/inline-1.webp)
+![朝、店先の入り口に暖簾が掛けられているところ](/images/blogs/japanese-business-hours-and-holidays/inline-1.webp)
 *暖簾が掛かるのは、日本共通の「営業中」の合図です — それが下ろされたら、掲示された時間が何と言おうと、その日の営業は終わりです。*
 
 ## 飲食店の中休みとラストオーダー
@@ -38,7 +38,7 @@ banner: "/images/articles/japanese-business-hours-and-holidays/banner.webp"
 
 **お盆（8月13日〜16日ごろ）。** 公式の国民の祝日ではありませんが、故郷の家族のもとへ帰る根強い伝統です。多くの企業や小規模ビジネスが数日間閉まり、交通機関は最も混雑します。
 
-![5月上旬のカレンダーのページ。いくつかの日付が赤く印されている](/images/articles/japanese-business-hours-and-holidays/inline-2.webp)
+![5月上旬のカレンダーのページ。いくつかの日付が赤く印されている](/images/blogs/japanese-business-hours-and-holidays/inline-2.webp)
 *紙の上のゴールデンウィーク：四つの赤い日が、実際には、企業の日本の大半にとって七日間になります。*
 
 ## 掲載情報の PH を読む

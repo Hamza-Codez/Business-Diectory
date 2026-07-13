@@ -4,7 +4,7 @@ slug: "get-your-business-found-online-in-japan"
 excerpt: "経営者の方へ — 地味な基本、つまり正確な名称・住所・電話番号・営業時間こそが、顧客に見つけてもらえるかを決めます。ほとんどのビジネスが見落とすオープンデータの裏技も含めたチェックリストです。"
 category: "ビジネス"
 publishedAt: "2026-05-28"
-banner: "/images/articles/get-your-business-found-online-in-japan/banner.webp"
+banner: "/images/blogs/get-your-business-found-online-in-japan/banner.webp"
 ---
 
 ビジネスがオンラインでどう見つけられるかを尋ねれば、広告、SNS、インフルエンサーといった話を聞くことになるでしょう。しかしそのすべての土台には、はるかに地味でありながら、購入準備の整った顧客が実際にあなたにたどり着けるかを決めるものがあります。それは、あなたの基本情報が、掲載されるあらゆる場所で正確かつ一貫していることです。
@@ -15,7 +15,7 @@ banner: "/images/articles/get-your-business-found-online-in-japan/banner.webp"
 
 最もよくある自滅は「ぶれ」です。あるプラットフォームでは 田中商店、別のところでは「Tanaka Shoten Co.」、また別のところでは古い住所。こうしたばらつきの一つひとつが、あなたの識別情報を、機械が別々のビジネスかもしれないと扱うものへと分裂させます。各事実について標準となる版を一つ選び — 非日本語圏の顧客に対応するならローマ字表記も一つ — ファイルに書き留め、以後は常にそのファイルから貼り付けましょう。
 
-![小さな店の入り口に立つ店主。扉の上には看板が見える](/images/articles/get-your-business-found-online-in-japan/inline-1.webp)
+![小さな店の入り口に立つ店主。扉の上には看板が見える](/images/blogs/get-your-business-found-online-in-japan/inline-1.webp)
 *あなたの扉にある情報 — 名称、営業時間、電話番号 — こそ、インターネットがあなたに求めているもので、まさにそのままの素朴な形でよいのです。*
 
 ## 営業時間は約束である
@@ -32,7 +32,7 @@ openstreetmap.org では誰でもビジネスを追加・修正できます。�
 
 作り込んだ写真よりも、実際の写真が勝ります。実際の入り口（顧客が通りから見分けられるように）、実際の内装、実際の商品や仕事。入り口の写真は最も過小評価されています。通りに名前のない国では、「これは自分が見ているものと一致するか？」が、しばしばすべての顧客が玄関にたどり着く旅の最後の一歩なのです。
 
-![ノートパソコンでビジネス情報を更新する手。そばには印刷したチェックリスト](/images/articles/get-your-business-found-online-in-japan/inline-2.webp)
+![ノートパソコンでビジネス情報を更新する手。そばには印刷したチェックリスト](/images/blogs/get-your-business-found-online-in-japan/inline-2.webp)
 *正確な名称・住所・電話番号・営業時間を記した標準ファイルを一つ。すべての掲載はそこから貼り付け、ぶれは決して始まりません。*
 
 ## 電話に出る、フォームに答える

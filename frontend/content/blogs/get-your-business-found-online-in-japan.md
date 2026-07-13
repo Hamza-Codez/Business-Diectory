@@ -4,7 +4,7 @@ slug: "get-your-business-found-online-in-japan"
 excerpt: "For owners: the unglamorous basics — accurate name, address, phone, and hours — decide whether customers find you. Here's the checklist, including the open-data trick most businesses miss."
 category: "Business"
 publishedAt: "2026-05-28"
-banner: "/images/articles/get-your-business-found-online-in-japan/banner.webp"
+banner: "/images/blogs/get-your-business-found-online-in-japan/banner.webp"
 ---
 
 Ask how a business gets discovered online and you'll hear about advertising, social media, influencers. But underneath all of it sits something far less glamorous that decides whether a ready-to-buy customer actually reaches you: your basic information, correct and consistent, everywhere it appears.
@@ -15,7 +15,7 @@ Name, address, phone — NAP, in local-search jargon. Directories, map applicati
 
 The most common self-inflicted wound is drift: 田中商店 on one platform, "Tanaka Shoten Co." on another, an old address on a third. Each variation splinters your identity into what machines treat as possibly-different businesses. Pick one canonical version of each fact — including one romanization if you serve non-Japanese customers — write it in a file, and paste from that file forever.
 
-![A shopkeeper standing at the entrance of a small shop, sign visible above the door](/images/articles/get-your-business-found-online-in-japan/inline-1.webp)
+![A shopkeeper standing at the entrance of a small shop, sign visible above the door](/images/blogs/get-your-business-found-online-in-japan/inline-1.webp)
 *The information on your door — name, hours, phone — is exactly what the internet needs from you, in exactly that plain form.*
 
 ## Hours are a promise
@@ -32,7 +32,7 @@ Anyone can add or fix a business on openstreetmap.org; the edit takes minutes an
 
 Real photographs outperform polished ones. Your actual entrance (so customers recognize it from the street), your actual interior, your actual products or work. The entrance photo is the most underrated: in a country of unnamed streets, "does this match what I'm looking at?" is often the final step of every customer's journey to your door.
 
-![Hands updating business information on a laptop, a printed checklist beside it](/images/articles/get-your-business-found-online-in-japan/inline-2.webp)
+![Hands updating business information on a laptop, a printed checklist beside it](/images/blogs/get-your-business-found-online-in-japan/inline-2.webp)
 *One canonical file with your exact name, address, phone, and hours — every listing gets pasted from it, and drift never starts.*
 
 ## Answer the phone, answer the form

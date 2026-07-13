@@ -1,26 +1,26 @@
 import Container from "@/components/layout/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
-import RecentArticlesGrid from "@/components/sections/RecentArticlesGrid";
+import RecentBlogsGrid from "@/components/sections/RecentBlogsGrid";
 import { MESSAGES } from "@/constants/messages";
-import { getAllArticles } from "@/lib/articles";
+import { getAllBlogs } from "@/lib/blogs";
 import { getLang } from "@/lib/i18n";
 
-export default async function RecentArticles() {
+export default async function RecentBlogs() {
   const lang = await getLang();
-  const articles = getAllArticles(lang).slice(0, 5);
-  if (articles.length === 0) return null;
+  const blogs = getAllBlogs(lang).slice(0, 5);
+  if (blogs.length === 0) return null;
 
   const m = MESSAGES[lang];
 
   return (
-    <section id="articles" className="bg-white py-16 lg:py-24">
+    <section id="blogs" className="bg-white py-16 lg:py-24">
       <Container>
         <SectionHeading
           align="center"
           eyebrow="記事 — ARTICLES"
-          title={m.articles.title}
+          title={m.blogs.title}
         />
-        <RecentArticlesGrid articles={articles} />
+        <RecentBlogsGrid blogs={blogs} />
       </Container>
     </section>
   );

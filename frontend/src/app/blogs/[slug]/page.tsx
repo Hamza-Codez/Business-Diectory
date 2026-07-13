@@ -5,43 +5,43 @@ import Link from "next/link";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import Container from "@/components/layout/Container";
-import ArticleRow from "@/components/cards/ArticleRow";
-import { getAllArticles, getArticleBySlug, getValidImageUrl } from "@/lib/articles";
+import BlogRow from "@/components/cards/BlogRow";
+import { getAllBlogs, getBlogBySlug, getValidImageUrl } from "@/lib/blogs";
 import { MESSAGES } from "@/constants/messages";
 import { getLang } from "@/lib/i18n";
 
 export async function generateStaticParams() {
-  const articles = getAllArticles();
-  return articles.map((article) => ({
-    slug: article.slug,
+  const blogs = getAllBlogs();
+  return blogs.map((blog) => ({
+    slug: blog.slug,
   }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const lang = await getLang();
-  const data = getArticleBySlug(slug, lang);
+  const data = getBlogBySlug(slug, lang);
 
   if (!data) return {};
 
-  const { article } = data;
+  const { blog } = data;
 
   return {
-    title: `${article.title} | Japan Business Directory`,
-    description: article.excerpt,
+    title: `${blog.title} | Japan Business Directory`,
+    description: blog.excerpt,
     openGraph: {
-      title: article.title,
-      description: article.excerpt,
+      title: blog.title,
+      description: blog.excerpt,
       images: [
         {
-          url: article.banner,
+          url: blog.banner,
           width: 1600,
           height: 900,
-          alt: article.title,
+          alt: blog.title,
         },
       ],
       type: "article",
-      publishedTime: article.publishedAt,
+      publishedTime: blog.publishedAt,
     },
   };
 }
@@ -132,32 +132,32 @@ const MarkdownComponents = {
   }
 };
 
-export default async function ArticleDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function BlogDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const lang = await getLang();
-  const data = getArticleBySlug(slug, lang);
+  const data = getBlogBySlug(slug, lang);
 
   if (!data) {
     notFound();
   }
 
-  const { article, content } = data;
+  const { blog, content } = data;
   const m = MESSAGES[lang];
-  const allArticles = getAllArticles(lang);
-  const moreArticles = allArticles.filter((a) => a.id !== article.id).slice(0, 3);
+  const allBlogs = getAllBlogs(lang);
+  const moreBlogs = allBlogs.filter((a) => a.id !== blog.id).slice(0, 3);
   
   // Format date correctly: "2026.07.02"
-  const dateObj = new Date(article.publishedAt);
+  const dateObj = new Date(blog.publishedAt);
   const formattedDate = `${dateObj.getFullYear()}.${String(dateObj.getMonth() + 1).padStart(2, "0")}.${String(dateObj.getDate()).padStart(2, "0")}`;
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: article.title,
+    headline: blog.title,
     image: [
-      new URL(article.banner, "https://japanbusinessdirectory.com").toString()
+      new URL(blog.banner, "https://japanbusinessdirectory.com").toString()
     ],
-    datePublished: article.publishedAt,
+    datePublished: blog.publishedAt,
     author: {
       "@type": "Organization",
       name: "Japan Business Directory"
@@ -180,19 +180,19 @@ export default async function ArticleDetailPage({ params }: { params: Promise<{ 
               </li>
               <li>/</li>
               <li>
-                <Link href="/articles" className="hover:text-primary transition-colors">{m.breadcrumb.articles}</Link>
+                <Link href="/blogs" className="hover:text-primary transition-colors">{m.breadcrumb.blogs}</Link>
               </li>
               <li>/</li>
-              <li className="text-ink line-clamp-1" aria-current="page">{article.title}</li>
+              <li className="text-ink line-clamp-1" aria-current="page">{blog.title}</li>
             </ol>
           </nav>
 
           <div className="max-w-[720px] mx-auto text-center mb-10 md:mb-12">
             <p className="font-mono text-sm text-primary uppercase tracking-widest font-semibold mb-4">
-              {article.category}
+              {blog.category}
             </p>
             <h1 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-ink leading-tight mb-6">
-              {article.title}
+              {blog.title}
             </h1>
             <p className="font-mono text-sm text-muted">
               {formattedDate}
@@ -204,8 +204,8 @@ export default async function ArticleDetailPage({ params }: { params: Promise<{ 
         <div className="w-full max-w-[1000px] mx-auto px-4 md:px-8 mb-12 md:mb-16">
           <div className="relative w-full aspect-[16/9] bg-white border border-line">
             <Image
-              src={article.banner}
-              alt={article.title}
+              src={blog.banner}
+              alt={blog.title}
               fill
               priority
               sizes="(max-width: 1000px) 100vw, 1000px"
@@ -214,7 +214,7 @@ export default async function ArticleDetailPage({ params }: { params: Promise<{ 
           </div>
         </div>
 
-        {/* Article Body */}
+        {/* Blog Body */}
         <Container>
           <div className="max-w-[720px] mx-auto">
             <div className="prose prose-lg max-w-none text-ink">
@@ -223,14 +223,14 @@ export default async function ArticleDetailPage({ params }: { params: Promise<{ 
               </ReactMarkdown>
             </div>
 
-            {/* Footer / More Articles */}
+            {/* Footer / More Blogs */}
             <div className="mt-20 pt-12 border-t border-line">
               <h2 className="font-display text-2xl font-semibold text-ink mb-8">
-                {m.articlesPage.more}
+                {m.blogsPage.more}
               </h2>
               <div className="flex flex-col gap-6">
-                {moreArticles.map((item) => (
-                  <ArticleRow key={item.id} article={item} />
+                {moreBlogs.map((item) => (
+                  <BlogRow key={item.id} blog={item} />
                 ))}
               </div>
             </div>

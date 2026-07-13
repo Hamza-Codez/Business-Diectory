@@ -3,36 +3,36 @@ import Link from "next/link";
 import Image from "next/image";
 import Container from "@/components/layout/Container";
 import SectionHeading from "@/components/ui/SectionHeading";
-import ArticleCard from "@/components/cards/ArticleCard";
-import { getAllArticles } from "@/lib/articles";
+import BlogCard from "@/components/cards/BlogCard";
+import { getAllBlogs } from "@/lib/blogs";
 import { formatDate } from "@/lib/utils";
 import { MESSAGES } from "@/constants/messages";
 import { getLang } from "@/lib/i18n";
 
 export const metadata: Metadata = {
-  title: "Articles | Japan Business Directory",
+  title: "Blogs | Japan Business Directory",
   description: "Guides to finding, reaching, and working with businesses in Japan.",
   alternates: {
-    canonical: "/articles",
+    canonical: "/blogs",
   },
 };
 
-export default async function ArticlesPage() {
+export default async function BlogsPage() {
   const lang = await getLang();
-  const articles = getAllArticles(lang);
+  const blogs = getAllBlogs(lang);
   const m = MESSAGES[lang];
 
-  if (articles.length === 0) {
+  if (blogs.length === 0) {
     return (
       <main className="flex-1 py-12 lg:py-20 bg-surface">
         <Container>
-          <p>{m.articlesPage.empty}</p>
+          <p>{m.blogsPage.empty}</p>
         </Container>
       </main>
     );
   }
 
-  const [featured, ...rest] = articles;
+  const [featured, ...rest] = blogs;
 
   return (
     <main className="flex-1 py-12 lg:py-20 bg-surface min-h-[80svh]">
@@ -44,22 +44,22 @@ export default async function ArticlesPage() {
               <Link href="/" className="hover:text-primary transition-colors">{m.breadcrumb.home}</Link>
             </li>
             <li>/</li>
-            <li className="text-ink" aria-current="page">{m.breadcrumb.articles}</li>
+            <li className="text-ink" aria-current="page">{m.breadcrumb.blogs}</li>
           </ol>
         </nav>
 
         {/* Heading */}
         <SectionHeading
           align="left"
-          eyebrow={m.articlesPage.eyebrow}
-          title={m.articlesPage.title}
-          subtitle={m.articlesPage.subtitle}
+          eyebrow={m.blogsPage.eyebrow}
+          title={m.blogsPage.title}
+          subtitle={m.blogsPage.subtitle}
         />
 
         <div className="mt-12 space-y-8 lg:space-y-12">
-          {/* Featured Article */}
+          {/* Featured Blog */}
           <Link
-            href={`/articles/${featured.slug}`}
+            href={`/blogs/${featured.slug}`}
             className="group block border border-line bg-white transition-colors hover:border-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
             <div className="relative w-full overflow-hidden aspect-[16/9] lg:aspect-[21/9]">
@@ -85,11 +85,11 @@ export default async function ArticlesPage() {
             </div>
           </Link>
 
-          {/* Grid of Remaining Articles */}
+          {/* Grid of Remaining Blogs */}
           {rest.length > 0 && (
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-8">
-              {rest.map((article) => (
-                <ArticleCard key={article.id} article={article} />
+              {rest.map((blog) => (
+                <BlogCard key={blog.id} blog={blog} />
               ))}
             </div>
           )}

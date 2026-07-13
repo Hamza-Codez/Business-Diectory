@@ -1,9 +1,9 @@
 import { unstable_cache } from "next/cache";
-import articlesJson from "../../content/articles/articles.json";
+import blogsJson from "../../content/blogs/blogs.json";
 import { CATEGORIES } from "@/constants/categories";
 import { resolveLocation, searchGeoapify, getPlaceDetails, type ApiResult } from "@/lib/adapters/geoapify";
 import { searchHotpepper } from "@/lib/adapters/hotpepper";
-import type { Article, Business, Category } from "@/types";
+import type { Blog, Business, Category } from "@/types";
 
 const ALL_GEOAPIFY_KEYS = [
   ...new Set(CATEGORIES.flatMap((c) => c.geoapifyKeys)),
@@ -102,19 +102,19 @@ export async function getPopularCategories(): Promise<Category[]> {
     .slice(0, 8);
 }
 
-const articles: Article[] = articlesJson.map(({ coverImage, ...rest }) => ({
+const blogs: Blog[] = blogsJson.map(({ coverImage, ...rest }) => ({
   ...rest,
   banner: coverImage,
 }));
 
-export async function getRecentArticles(): Promise<Article[]> {
-  return [...articles]
+export async function getRecentBlogs(): Promise<Blog[]> {
+  return [...blogs]
     .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
     .slice(0, 5);
 }
 
-export async function getArticleBySlug(slug: string): Promise<Article | undefined> {
-  return articles.find((article) => article.slug === slug);
+export async function getBlogBySlug(slug: string): Promise<Blog | undefined> {
+  return blogs.find((blog) => blog.slug === slug);
 }
 
 export const getFeaturedPool = unstable_cache(
@@ -174,6 +174,14 @@ export const getFeaturedPool = unstable_cache(
 
 export const getBusinessById = unstable_cache(
   async (id: string): Promise<Business | null> => {
+    if (id.startsWith("hp_")) {
+      const hpId = id.slice(3);
+      const res = await searchHotpepper({ id: hpId });
+      if (res.status === "ok" && res.businesses.length > 0) {
+        return res.businesses[0];
+      }
+      return null;
+    }
     const placeId = id.startsWith("geo_") ? id.slice(4) : id;
     return getPlaceDetails(placeId);
   },

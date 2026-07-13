@@ -42,6 +42,7 @@ function toBusiness(shop: HotpepperShop): Business {
  */
 export async function searchHotpepper(params: {
   keyword?: string;
+  id?: string;
   coords?: Coords;
   limit?: number;
 }): Promise<ApiResult> {
@@ -58,8 +59,9 @@ export async function searchHotpepper(params: {
       count: String(Math.min(params.limit ?? 20, 100)),
     });
     if (params.keyword?.trim()) query.set("keyword", params.keyword.trim());
+    if (params.id) query.set("id", params.id);
 
-    const coords = params.coords ?? (params.keyword?.trim() ? undefined : DEFAULT_COORDS);
+    const coords = params.coords ?? ((params.keyword?.trim() || params.id) ? undefined : DEFAULT_COORDS);
     if (coords) {
       query.set("lat", String(coords.lat));
       query.set("lng", String(coords.lng));

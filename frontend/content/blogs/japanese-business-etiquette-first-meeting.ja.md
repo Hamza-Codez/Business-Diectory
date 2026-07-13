@@ -4,7 +4,7 @@ slug: "japanese-business-etiquette-first-meeting"
 excerpt: "名刺交換、席次、お辞儀 — 日本企業との初回面談で本当に大切なことと、間違えても許されることを解説します。"
 category: "ビジネス"
 publishedAt: "2026-06-15"
-banner: "/images/articles/japanese-business-etiquette-first-meeting/banner.webp"
+banner: "/images/blogs/japanese-business-etiquette-first-meeting/banner.webp"
 ---
 
 ディレクトリで会社を見つけ、連絡を取り、面談を取り付けました。さて、多くの訪問者を緊張させる部分 — マナーです。正直なところをお伝えします。本当に大切な瞬間はいくつかしかなく、誠意がほとんどの隙間を埋めてくれ、外国人の訪問者に完璧を求める人など誰もいません。
@@ -21,7 +21,7 @@ banner: "/images/articles/japanese-business-etiquette-first-meeting/banner.webp"
 
 名刺を持っていないなら、手短にお詫びし、別の方法で連絡先を伝えましょう。それは一拍の抜けであって、無礼ではありません。
 
-![机越しに両手で名刺を交換する二人のビジネスパーソン](/images/articles/japanese-business-etiquette-first-meeting/inline-1.webp)
+![机越しに両手で名刺を交換する二人のビジネスパーソン](/images/blogs/japanese-business-etiquette-first-meeting/inline-1.webp)
 *両手で、印字面を相手に向け、そして読むために本当に一呼吸置く — 名刺交換は、場の雰囲気を決める30秒です。*
 
 ## お辞儀について、手短に
@@ -38,7 +38,7 @@ banner: "/images/articles/japanese-business-etiquette-first-meeting/banner.webp"
 
 沈黙もまた、リズムの一部です。あなたが話した後の間は、たいてい不同意ではなく熟考を意味します。それを埋めたい衝動を抑えましょう。
 
-![低い机、湯呑みで出された緑茶、そして広げられたノートのある会議室](/images/articles/japanese-business-etiquette-first-meeting/inline-2.webp)
+![低い机、湯呑みで出された緑茶、そして広げられたノートのある会議室](/images/blogs/japanese-business-etiquette-first-meeting/inline-2.webp)
 *お茶は頼まなくても出てくるのが普通です。ホスト側が口をつけてから一口 — これがすべての作法です。*
 
 ## その後

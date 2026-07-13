@@ -5,7 +5,7 @@ import RandomCategoryGrid from "@/components/sections/RandomCategoryGrid";
 import ListedBusinesses from "@/components/sections/ListedBusinesses";
 import ConnectCta from "@/components/sections/ConnectCta";
 import PopularCategories from "@/components/sections/PopularCategories";
-import RecentArticles from "@/components/sections/RecentArticles";
+import RecentBlogs from "@/components/sections/RecentBlogs";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import { getLang } from "@/lib/i18n";
 
@@ -20,7 +20,7 @@ export default async function Home() {
       <ListedBusinesses />
       <ConnectCta />
       <PopularCategories />
-      <RecentArticles />
+      <RecentBlogs />
       <WhyChooseUs />
     </main>
   );

@@ -4,7 +4,8 @@ type Messages = {
   nav: {
     home: string;
     categories: string;
-    articles: string;
+    blogs: string;
+    pricing: string;
     contact: string;
     cta: string;
   };
@@ -20,7 +21,7 @@ type Messages = {
   };
   connect: { title: string; p1: string; p2: string; cta: string };
   popular: { title: string; subtitle: string };
-  articles: { title: string };
+  blogs: { title: string };
   why: { title: string; blocks: { claim: string; support: string }[] };
   footer: { description: string; privacy: string; terms: string; rights: string };
   search: {
@@ -51,14 +52,41 @@ type Messages = {
   listed: { eyebrow: string; title: string; subtitle: string; viewAll: string };
   directory: { eyebrow: string; title: string; subtitle: string; explore: string };
   categoriesPage: { eyebrow: string; title: string; subtitle: string };
-  articlesPage: {
+  blogsPage: {
     eyebrow: string;
     title: string;
     subtitle: string;
     empty: string;
     more: string;
   };
-  breadcrumb: { home: string; articles: string };
+  pricingPage: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    plans: {
+      lite: { name: string; tagline: string; };
+      standard: { name: string; tagline: string; };
+      business: { name: string; tagline: string; };
+    };
+    intervals: {
+      perYear: string;
+      perSixMonth: string;
+      lessThanMonth: string;
+      saveYear: string;
+    };
+    badges: { recommended: string; };
+    cta: string;
+    table: {
+      heading: string;
+      features: {
+        name: string;
+        lite: boolean | string;
+        standard: boolean | string;
+        business: boolean | string;
+      }[];
+    };
+  };
+  breadcrumb: { home: string; blogs: string };
   businessCard: { website: string; viewDetails: string };
   businessDetail: {
     address: string;
@@ -133,7 +161,8 @@ export const MESSAGES: Record<Lang, Messages> = {
     nav: {
       home: "Home",
       categories: "Categories",
-      articles: "Articles",
+      blogs: "Blogs",
+      pricing: "Pricing",
       contact: "Contact",
       cta: "Add your business",
     },
@@ -165,7 +194,7 @@ export const MESSAGES: Record<Lang, Messages> = {
       title: "Popular categories",
       subtitle: "Where people search the most.",
     },
-    articles: { title: "Recent articles" },
+    blogs: { title: "Recent blogs" },
     why: {
       title: "Why choose us",
       blocks: [
@@ -233,14 +262,45 @@ export const MESSAGES: Record<Lang, Messages> = {
       title: "All Categories",
       subtitle: "Browse all business categories across Japan",
     },
-    articlesPage: {
+    blogsPage: {
       eyebrow: "記事 — ARTICLES",
-      title: "Articles",
+      title: "Blogs",
       subtitle: "Guides to finding, reaching, and working with businesses in Japan.",
-      empty: "No articles found.",
-      more: "More articles",
+      empty: "No blogs found.",
+      more: "More blogs",
     },
-    breadcrumb: { home: "Home", articles: "Articles" },
+    pricingPage: {
+      eyebrow: "料金プラン — PRICING",
+      title: "Pricing Plans",
+      subtitle: "Choose the best plan to empower your business.",
+      plans: {
+        lite: { name: "Lite", tagline: "Upgrade to Lite - Expand Your Opportunities." },
+        standard: { name: "Standard", tagline: "Step Up to Standard - Stand Out, Uplift Your Success!" },
+        business: { name: "Business", tagline: "Upgrade to Business - Empower Your Business with the Best." },
+      },
+      intervals: {
+        perYear: "/ Year",
+        perSixMonth: "/ Six Month",
+        lessThanMonth: "Less than $38 / Month",
+        saveYear: "Save 25% on Year plan",
+      },
+      badges: { recommended: "Recommended" },
+      cta: "Get Started",
+      table: {
+        heading: "Feature Comparison",
+        features: [
+          { name: "Search Engine Optimization (SEO)", lite: true, standard: true, business: true },
+          { name: "Search Visibility", lite: "Medium", standard: "High", business: "Priority" },
+          { name: "Max Product Listings", lite: "100", standard: "200", business: "500" },
+          { name: "B2B Lead Inquiries", lite: "100 / Month", standard: "200 / Month", business: "500 / Month" },
+          { name: "Dedicated Account Manager", lite: false, standard: false, business: true },
+          { name: "Custom Analytics Dashboard", lite: false, standard: true, business: true },
+          { name: "Sponsored Blog Content", lite: false, standard: "1 Post / Year", business: "2 Posts / Year" },
+          { name: "Verified Business Badge", lite: true, standard: true, business: true },
+        ]
+      }
+    },
+    breadcrumb: { home: "Home", blogs: "Blogs" },
     businessCard: { website: "Website", viewDetails: "View details for" },
     businessDetail: {
       address: "Address",
@@ -319,7 +379,8 @@ export const MESSAGES: Record<Lang, Messages> = {
     nav: {
       home: "ホーム",
       categories: "カテゴリー",
-      articles: "記事",
+      blogs: "記事",
+      pricing: "料金プラン",
       contact: "お問い合わせ",
       cta: "ビジネスを掲載",
     },
@@ -351,7 +412,7 @@ export const MESSAGES: Record<Lang, Messages> = {
       title: "人気のカテゴリー",
       subtitle: "最も検索されているカテゴリー。",
     },
-    articles: { title: "最新の記事" },
+    blogs: { title: "最新の記事" },
     why: {
       title: "選ばれる理由",
       blocks: [
@@ -417,14 +478,45 @@ export const MESSAGES: Record<Lang, Messages> = {
       title: "すべてのカテゴリー",
       subtitle: "日本全国のビジネスカテゴリーを閲覧",
     },
-    articlesPage: {
+    blogsPage: {
       eyebrow: "記事 — ARTICLES",
       title: "記事",
       subtitle: "日本のビジネスを見つけ、つながり、協働するためのガイド。",
       empty: "記事が見つかりませんでした。",
       more: "その他の記事",
     },
-    breadcrumb: { home: "ホーム", articles: "記事" },
+    pricingPage: {
+      eyebrow: "料金プラン — PRICING",
+      title: "料金プラン",
+      subtitle: "ビジネスを加速させる最適なプランをお選びください。",
+      plans: {
+        lite: { name: "ライト", tagline: "ライトプランへアップグレード - 機会を広げましょう。" },
+        standard: { name: "スタンダード", tagline: "スタンダードへステップアップ - 際立ち、成功を高めましょう！" },
+        business: { name: "ビジネス", tagline: "ビジネスプランへアップグレード - 最高の機能でビジネスを強化します。" },
+      },
+      intervals: {
+        perYear: "/ 年",
+        perSixMonth: "/ 半年",
+        lessThanMonth: "月額38ドル以下",
+        saveYear: "年間プランで25%オフ",
+      },
+      badges: { recommended: "おすすめ" },
+      cta: "はじめる",
+      table: {
+        heading: "機能比較",
+        features: [
+          { name: "検索エンジン最適化（SEO）", lite: true, standard: true, business: true },
+          { name: "検索での可視性", lite: "中", standard: "高", business: "最優先" },
+          { name: "最大製品掲載数", lite: "100", standard: "200", business: "500" },
+          { name: "B2Bリード問い合わせ", lite: "100件 / 月", standard: "200件 / 月", business: "500件 / 月" },
+          { name: "専任アカウントマネージャー", lite: false, standard: false, business: true },
+          { name: "カスタム分析ダッシュボード", lite: false, standard: true, business: true },
+          { name: "スポンサー記事コンテンツ", lite: false, standard: "1記事 / 年", business: "2記事 / 年" },
+          { name: "認証済みビジネスバッジ", lite: true, standard: true, business: true },
+        ]
+      }
+    },
+    breadcrumb: { home: "ホーム", blogs: "記事" },
     businessCard: { website: "ウェブサイト", viewDetails: "詳細を見る：" },
     businessDetail: {
       address: "住所",

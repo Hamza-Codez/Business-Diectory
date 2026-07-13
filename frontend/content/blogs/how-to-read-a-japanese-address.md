@@ -4,7 +4,7 @@ slug: "how-to-read-a-japanese-address"
 excerpt: "Japanese addresses work from the largest area down to the smallest — the opposite of most Western systems. Here's how to decode one and actually find the building."
 category: "Guides"
 publishedAt: "2026-07-02"
-banner: "/images/articles/how-to-read-a-japanese-address/banner.webp"
+banner: "/images/blogs/how-to-read-a-japanese-address/banner.webp"
 ---
 
 Every listing in a directory ultimately comes down to one thing: can you find the place? In Japan, that depends on understanding an address system that works in the opposite direction from most of the world — and once you see the logic, it never confuses you again.
@@ -15,7 +15,7 @@ A Japanese address zooms in like a camera. It starts with the prefecture, narrow
 
 When the same address is romanized for international use, the order flips to match Western convention: 1-2-3 Jinnan, Shibuya-ku, Tokyo. Same place, mirrored order. This flip is the single biggest source of confusion — if an address looks "backwards," it's usually just been converted between the two conventions.
 
-![A Japanese address plate mounted on a building wall showing the district and block numbers](/images/articles/how-to-read-a-japanese-address/inline-1.webp)
+![A Japanese address plate mounted on a building wall showing the district and block numbers](/images/blogs/how-to-read-a-japanese-address/inline-1.webp)
 *Blue-and-white address plates on buildings show the district, chōme, and block — they're the street signs Japan mostly doesn't have.*
 
 ## The three numbers
@@ -34,7 +34,7 @@ Japan's 47 prefectures aren't all labeled the same way. Most end in -ken (県), 
 
 Inside large cities you'll see -ku (区) for wards, -shi (市) for cities, and in rural areas -gun (郡) for districts containing towns (-chō/-machi) and villages (-mura/-son).
 
-![A smartphone showing a map app with a dropped pin, held up on a Japanese street](/images/articles/how-to-read-a-japanese-address/inline-2.webp)
+![A smartphone showing a map app with a dropped pin, held up on a Japanese street](/images/blogs/how-to-read-a-japanese-address/inline-2.webp)
 *Postal code first, then the block numbers: with those two, any map app takes you to the door.*
 
 ## Finding the door in practice

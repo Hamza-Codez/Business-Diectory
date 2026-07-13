@@ -27,6 +27,9 @@ export const metadata: Metadata = {
   title: "Japan Business Directory — Find any business in Japan",
   description:
     "Addresses, phone numbers, hours, and locations for businesses across Japan — searchable by keyword, category, and location.",
+  icons: {
+    icon: "/assets/navicon.png",
+  },
 };
 
 export default async function RootLayout({

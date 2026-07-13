@@ -16,11 +16,11 @@ export function Wordmark() {
       className="flex items-center gap-2 font-display text-sm sm:text-xl font-semibold text-ink sm:gap-2.5"
     >
       <Image
-        src="/assets/cherry.png"
-        alt="Cherry Logo"
-        width={24}
-        height={24}
-        className="shrink-0 animate-[spin_8s_linear_infinite]"
+        src="/assets/navicon.png"
+        alt="Navicon"
+        width={32}
+        height={32}
+        className="shrink-0"
       />
       <span className="leading-tight">Japan Business Directory</span>
     </Link>

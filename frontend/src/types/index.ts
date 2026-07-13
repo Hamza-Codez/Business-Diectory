@@ -40,7 +40,7 @@ export interface Business {
   image?: string; // Hot Pepper photo; others use category fallback image
 }
 
-export interface Article {
+export interface Blog {
   id: string;
   title: string;
   slug: string;

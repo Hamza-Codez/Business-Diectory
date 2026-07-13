@@ -4,7 +4,7 @@ slug: "japanese-business-etiquette-first-meeting"
 excerpt: "The business card exchange, the seating chart, the bow — what actually matters in a first meeting with a Japanese company, and what you're allowed to get wrong."
 category: "Business"
 publishedAt: "2026-06-15"
-banner: "/images/articles/japanese-business-etiquette-first-meeting/banner.webp"
+banner: "/images/blogs/japanese-business-etiquette-first-meeting/banner.webp"
 ---
 
 You've found the company in the directory, made contact, and secured a meeting. Now the part that makes many visitors nervous: the etiquette. Here's the honest version — a handful of moments genuinely matter, sincerity covers most gaps, and nobody expects a foreign visitor to perform perfectly.
@@ -21,7 +21,7 @@ Offer your card with both hands, print facing the recipient so they can read it,
 
 If you don't have cards, apologize briefly and offer your details another way. It's a missed beat, not an offense.
 
-![Two businesspeople exchanging business cards with both hands across a table](/images/articles/japanese-business-etiquette-first-meeting/inline-1.webp)
+![Two businesspeople exchanging business cards with both hands across a table](/images/blogs/japanese-business-etiquette-first-meeting/inline-1.webp)
 *Both hands, print facing the recipient, and a genuine pause to read — the meishi exchange is thirty seconds that sets the tone.*
 
 ## Bowing, briefly
@@ -38,7 +38,7 @@ First meetings in Japan often move slower than Western visitors expect. Small ta
 
 Silence is also part of the rhythm. A pause after you speak usually means consideration, not disagreement. Resist the urge to fill it.
 
-![A meeting room with a low table, green tea served in cups, and notebooks laid out](/images/articles/japanese-business-etiquette-first-meeting/inline-2.webp)
+![A meeting room with a low table, green tea served in cups, and notebooks laid out](/images/blogs/japanese-business-etiquette-first-meeting/inline-2.webp)
 *Tea will usually arrive without being ordered. Take a sip after your hosts do — that's the entire rule.*
 
 ## Afterward
